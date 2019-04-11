@@ -49,9 +49,6 @@ module.exports.datastores = {
     *                                                                          *
     ***************************************************************************/
      adapter: require('sails-mysql'),
-     url: 'mysql://root:aptx4869@101.132.116.211:3306/asim2',
-
+     url: 'mysql://root:aptx4869@101.132.116.211:3306/petpy',
   },
-
-
 };

@@ -18,8 +18,23 @@ module.exports = {
      
       type:'string',
       required:true,
+    },
+    telephone:{
+      type:'string',
+      required:true,
+    },
+    picture:{
+      type:'string',
+      required:true,
+    },
+    email:{
+      type:'string',
+      required:true,
+    },
+    signature:{
+      type:'string',
+      required:true,
     }
-
   },
 
 };

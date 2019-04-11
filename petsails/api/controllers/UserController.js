@@ -6,10 +6,10 @@
  */
 
 module.exports = {
-    fn:async function(req,res){
+    login:async function(req,res){
         var userInfo= await User.findOne({
-            username:req.params("username"),
-            password:req.params("password"),
+            username:req.param('username'),
+            password:req.param('password'),
         })
         console.log(userInfo)
         if(userInfo){ 
@@ -21,7 +21,19 @@ module.exports = {
                 info:'fail'
             })
         } 
+    },
+    sign_up:async function(req,res){
+        await User.create({
+            username:req.param('username'),
+            password:req.param('password'),
+            telephone:req.param('telephone'),
+            picture:req.param('picture'),
+            email:req.param('email'),
+            signature:req.param('signature'),
+        })
+    },
+    set_personinfo:async function(req,res){
+        
     }
-
 };
 
