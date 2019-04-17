@@ -6,7 +6,10 @@
  */
 
 module.exports = {
-  
-
+    trade_info:async function(req,res){
+        var tradeInfo= await Trade.findOne({
+           id:req.param('id')
+        })
+    },
 };
 
