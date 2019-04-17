@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-    set_petinfo:async function(req,res){
+    set_petInfo:async function(req,res){
         await Pet.create({
             petname:req.param('username'),
             petvariety:req.param('petvariety'),
@@ -16,7 +16,7 @@ module.exports = {
             ownerid:req.param('ownerid')
         })
     },
-    get_petinfo:async function(req,res){
+    get_petInfo:async function(req,res){
         var petInfo = await Pet.findOne({
             ownerid:req.param('ownerid'),
             petname:req.param('petname')

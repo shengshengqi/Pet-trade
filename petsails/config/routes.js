@@ -19,7 +19,14 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/pettrade.tzjyqs.com': { view: 'pages/homepage' },
+  '/': { view: 'pages/homepage' },
+  '/login':'UserController.login',
+  '/sign_up':'UserController.sign_up',
+  'PUT /persionInfo':'UserController.set_persionInfo',
+  'GET /trade_info':'TradeController.trade_info',
+  'PUT /petInfo':'PetController.set_petInfo',
+  'GET /petInfo':'PetController.get_petInfo',
+  'GET /pet':'PetController.search_pet'
 
   /***************************************************************************
   *                                                                          *

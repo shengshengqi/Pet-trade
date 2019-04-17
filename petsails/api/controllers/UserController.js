@@ -28,7 +28,7 @@ module.exports = {
             password:req.param('password'),
         })
     },
-    set_personinfo:async function(req,res){
+    set_personInfo:async function(req,res){
         await User.create({
             telephone:req.param('telephone'),
             picture:req.param('picture'),
