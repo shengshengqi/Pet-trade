@@ -20,7 +20,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
-  '/login':'UserController.login',
+  'GET /login':'UserController.login',
   '/sign_up':'UserController.sign_up',
   'PUT /persionInfo':'UserController.set_persionInfo',
   'GET /trade_info':'TradeController.trade_info',

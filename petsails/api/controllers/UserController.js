@@ -35,6 +35,7 @@ module.exports = {
             email:req.param('email'),
             signature:req.param('signature'),
         })
+        //var users = await User.find().populate('pets');
     }
 };
 

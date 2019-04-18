@@ -36,6 +36,11 @@ module.exports = {
       required:true,
     }
   },
+  // Add a reference to Pets
+  pets: {
+    collection: 'pet',
+    via: 'owner'
+  }
 
 };
 

@@ -33,8 +33,8 @@ module.exports = {
         } 
     },
     search_pet:async function(req,res){
-        var petInfo = await Pet.findOne({
-            petvariety:req.param('petvarirty')
+        var petInfo = await Pet.find({
+            petvariety:{'contains' : req.param('petvarirty')}
         })
         console.log(petInfo)
         if(petInfo){ 
