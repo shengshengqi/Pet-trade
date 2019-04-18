@@ -21,7 +21,7 @@ module.exports.routes = {
 
   '/': { view: 'pages/homepage' },
   'GET /login':'UserController.login',
-  '/sign_up':'UserController.sign_up',
+  'PUT /sign_up':'UserController.sign_up',
   'PUT /persionInfo':'UserController.set_persionInfo',
   'GET /trade_info':'TradeController.trade_info',
   'PUT /petInfo':'PetController.set_petInfo',
