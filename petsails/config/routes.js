@@ -20,13 +20,14 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
-  'GET /login':'UserController.login',
+  'GET /login/id':'UserController.login',
   'PUT /sign_up':'UserController.sign_up',
-  'PUT /persionInfo':'UserController.set_persionInfo',
-  'GET /trade_info':'TradeController.trade_info',
-  'PUT /petInfo':'PetController.set_petInfo',
-  'GET /petInfo':'PetController.get_petInfo',
-  'GET /pet':'PetController.search_pet'
+  'PUT /persionInfo/id':'UserController.set_persionInfo',
+  'GET /yourpet/id':'UserController.get_yourpet',
+  'GET /trade_info/id':'TradeController.trade_info',
+  'PUT /petInfo/id':'PetController.set_petInfo',
+  'GET /petInfo/id':'PetController.get_petInfo',
+  'GET /pet/id':'PetController.search_pet'
 
   /***************************************************************************
   *                                                                          *

@@ -36,6 +36,19 @@ module.exports = {
             signature:req.param('signature'),
         })
         //var users = await User.find().populate('pets');
+    },
+    get_yourpet:async function(req,res){
+        var users = await User.find().populate('pets');
+        console.log(users)
+        if(users){ 
+            return res.status(200).send({
+                info:users
+            })
+        }else{
+            return res.status(403).send({
+                info:'fail'
+            })
+        } 
     }
 };
 
