@@ -8,10 +8,9 @@
 module.exports = {
     set_petInfo:async function(req,res){
         await Pet.create({
-            petname:req.param('username'),
+            petname:req.param('petname'),
             petvariety:req.param('petvariety'),
             info:req.param('info'),
-            picture:req.param('picture'),
             price:req.param('price'),
             ownerid:req.param('ownerid')
         })
@@ -31,6 +30,12 @@ module.exports = {
                 info:'fail'
             })
         } 
+    },
+    uploadImage:async function(req,res){
+
+    },
+    deletes_pet:async function(req,res){
+
     },
     search_pet:async function(req,res){
         var petInfo = await Pet.find({
