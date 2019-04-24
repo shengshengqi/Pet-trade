@@ -21,18 +21,19 @@ module.exports.routes = {
 
   '/': { view: 'pages/homepage' },
   //user
-  'GET /login/id':'UserController.login',
-  'PUT /sign_up':'UserController.sign_up',
-  'PUT /persionInfo/id':'UserController.set_persionInfo',
-  'GET /yourpet/id':'UserController.get_yourpet',
+  'GET /user/login/id':'UserController.login',
+  'PUT /user/sign_up/id':'UserController.sign_up',
+  'PUT /user/persionInfo/id':'UserController.set_persionInfo',
+  'GET /user/yourpets/id':'UserController.get_yourpet',
   //trade
-  'GET /trade_info/id':'TradeController.trade_info',
+  'GET /trade/info/id':'TradeController.trade_info',
   //pet
-  'PUT /petInfo/id':'PetController.set_petInfo',
-  'GET /petInfo/id':'PetController.get_petInfo',
-  'GET /pets/id':'PetController.search_pet',
-  'POST /image/id':'PetController.uploadImage',
-  'DELETE /pet/name':'PetController.deletes_pet',
+  'PUT /pet/id':'PetController.set_petInfo',
+  'GET /petInfo/Id':'PetController.get_petInfo',
+  'GET /pets/findByVariety':'PetController.search_pet',
+  'POST /images/id':'PetController.uploadImage',
+  'POST /pet/id':'PetController.create_pet',
+  'DELETE /pet/id':'PetController.deletes_pet',
 
   /***************************************************************************
   *                                                                          *

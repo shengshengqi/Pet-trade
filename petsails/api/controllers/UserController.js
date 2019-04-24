@@ -29,7 +29,7 @@ module.exports = {
         })
     },
     set_personInfo:async function(req,res){
-        await User.create({
+        await User.Upload({
             telephone:req.param('telephone'),
             picture:req.param('picture'),
             email:req.param('email'),

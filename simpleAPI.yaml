@@ -1,0 +1,302 @@
+swagger: "2.0"
+info:
+  description: "创新实践课，宠物交易网站api设计"
+  version: "1.0.0"
+  title: "Pet-trade"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "apiteam@swagger.io"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "petstore.swagger.io"
+basePath: "/v2"
+tags:
+- name: "pet"
+  description: "Everything about your Pets"
+- name: "trade"
+  description: "trade"
+- name: "user"
+  description: "Operations about user"
+schemes:
+- "https"
+- "http"
+paths:
+  /pet/id:
+    post:
+      tags:
+      - "pet"
+      summary: "在个人仓库中新建宠物"
+      description: "用于在个人仓库中添加宠物"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "query"
+        description: "宠物id"
+        required: true
+        type: "string"
+      - name: "name"
+        in: "query"
+        description: "宠物名称"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "Invalid"
+  
+    put:
+      tags:
+      - "pet"
+      summary: "完善宠物信息"
+      description: ""
+      operationId: "updatePet"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "通过id查找宠物并完善信息"
+        required: true
+        type: "string"
+      - name: "info"
+        in: "header"
+        description: "宠物信息"
+        required: true
+        type: "string"
+      responses:
+        400:
+          description: "Invalid"
+        404:
+          description: "Pet not found"
+        405:
+          description: "Validation exception"
+          
+    delete:
+      tags:
+      - "pet"
+      summary: "删除宠物"
+      description: "删除拥有的宠物"
+      operationId: "deletePet"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "query"
+        required: true
+        type: "string"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Pet not found"
+  /pet/findByVariety:
+    get:
+      tags:
+      - "pet"
+      summary: "通过petvariety查找宠物"
+      description: "通过宠物品种查找宠物"
+      operationId: "findPetsByVariety"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "petvariety"
+        in: "query"
+        description: "宠物品种"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "Invalid"
+  /petInfo/Id:
+    get:
+      tags:
+      - "pet"
+      summary: "获取宠物信息"
+      description: "获取宠物图片、品种、名字、介绍等信息"
+      operationId: "findPetsById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "query"
+        description: "宠物id"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "Invalid"
+  /pet/{petId}/uploadImage:
+    post:
+      tags:
+      - "pet"
+      summary: "uploads an image"
+      description: ""
+      operationId: "uploadFile"
+      consumes:
+      - "multipart/form-data"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "petId"
+        in: "path"
+        description: "ID of pet to update"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "additionalMetadata"
+        in: "formData"
+        description: "Additional data to pass to server"
+        required: false
+        type: "string"
+      - name: "file"
+        in: "formData"
+        description: "file to upload"
+        required: false
+        type: "file"
+      responses:
+        200:
+          description: "successful operation"
+  /user/login/id:
+    get:
+      tags:
+      - "user"
+      summary: "登录"
+      description: "使用昵称和密码登录"
+      operationId: ""
+      produces:
+      - "application/json"
+      parameters: 
+      - name: "name"
+        in: "query"
+        description: "昵称"
+        required: true
+        type: "string"
+      - name: "password"
+        in: "query"
+        description: "密码"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "Invalid Order"
+  /user/sign_up/id:
+    put:
+      tags:
+      - "user"
+      summary: "注册"
+      description: ""
+      operationId: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "query"
+        name: "name"
+        description: "昵称（允许重复）"
+        type: "string"
+        required: true
+      - in: "query"
+        name: "password"
+        description: "密码"
+        type: "string"
+        required: true
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "Invalid Order"
+  /user/persionInfo/id:
+    put:
+      tags:
+      - "user"
+      summary: "完善用户信息"
+      description: ""
+      operationId: "setPersionInfoById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: ""
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Order not found"
+    delete:
+      tags:
+      - "user"
+      summary: "删除用户信息"
+      description: ""
+      operationId: ""
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: ""
+        required: true
+        type: "integer"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Order not found"
+  /user/yourpets/id:
+    get:
+      tags:
+      - "user"
+      summary: "获取用户所拥有的宠物信息"
+      description: ""
+      operationId: ""
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "query"
+        name: "id"
+        description: "Created user object"
+        required: true
+        type: "string"
+      responses:
+        default:
+          description: "successful operation"
+
+  /trade/info/id:
+    get:
+      tags:
+      - "trade"
+      summary: "获取交易信息"
+      description: ""
+      operationId: ""
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "query"
+        description: "用户id"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "Invalid"
