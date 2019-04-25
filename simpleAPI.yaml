@@ -33,14 +33,29 @@ paths:
       produces:
       - "application/json"
       parameters:
-      - name: "id"
+      - name: "age"
         in: "query"
-        description: "宠物id"
+        description: "宠物年龄"
         required: true
         type: "string"
       - name: "name"
         in: "query"
         description: "宠物名称"
+        required: true
+        type: "string"
+      - name: "info"
+        in: "query"
+        description: "宠物描述"
+        required: true
+        type: "string"
+      - name: "price"
+        in: "query"
+        description: "价格"
+        required: true
+        type: "string"
+      - name: "petvariety"
+        in: "query"
+        description: "品种"
         required: true
         type: "string"
       responses:
@@ -100,7 +115,7 @@ paths:
     get:
       tags:
       - "pet"
-      summary: "通过petvariety查找宠物"
+      summary: "按照品种查找"
       description: "通过宠物品种查找宠物"
       operationId: "findPetsByVariety"
       produces:
@@ -140,7 +155,7 @@ paths:
     post:
       tags:
       - "pet"
-      summary: "上传宠物图片"
+      summary: "上传宠物图片x3"
       description: ""
       operationId: "uploadFile"
       consumes:
@@ -194,7 +209,7 @@ paths:
       parameters: 
       - name: "name"
         in: "query"
-        description: "昵称"
+        description: "用户名"
         required: true
         type: "string"
       - name: "password"
@@ -204,9 +219,9 @@ paths:
         type: "string"
       responses:
         200:
-          description: "successful operation"
+          description: "successful operation，返回1"
         400:
-          description: "Invalid Order"
+          description: "用户名不存在，密码错误"
   /user/sign_up/id:
     put:
       tags:
@@ -219,7 +234,7 @@ paths:
       parameters:
       - in: "query"
         name: "name"
-        description: "昵称（允许重复）"
+        description: "昵称（不允许重复）"
         type: "string"
         required: true
       - in: "query"
@@ -227,9 +242,14 @@ paths:
         description: "密码"
         type: "string"
         required: true
+      - in: "query"
+        name: "dobpassword"
+        description: "重复密码"
+        type: "string"
+        required: true
       responses:
         200:
-          description: "successful operation"
+          description: "successful operation，返回1，注册成功"
         400:
           description: "Invalid Order"
   /user/persionInfo/id:
@@ -247,6 +267,7 @@ paths:
         description: ""
         required: true
         type: "string"
+      
       responses:
         200:
           description: "successful operation"
