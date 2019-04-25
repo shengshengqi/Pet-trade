@@ -29,9 +29,10 @@ module.exports.routes = {
   'GET /trade/info/id':'TradeController.trade_info',
   //pet
   'PUT /pet/id':'PetController.set_petInfo',
-  'GET /petInfo/Id':'PetController.get_petInfo',
+  'GET /petInfo/id':'PetController.get_petInfo',
   'GET /pets/findByVariety':'PetController.search_pet',
-  'POST /images/id':'PetController.uploadImage',
+  'POST /pet/image/id':'PetController.uploadImage',
+  'GET /pet/image/id':'PetController.Image',
   'POST /pet/id':'PetController.create_pet',
   'DELETE /pet/id':'PetController.deletes_pet',
 
