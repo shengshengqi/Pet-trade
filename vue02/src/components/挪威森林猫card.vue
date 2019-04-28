@@ -1,0 +1,58 @@
+<template>
+
+  <el-col :span="8">
+    <el-card :body-style="{ padding: '0px' }">
+      <img src="../assets/挪威森林猫.png" class="image">
+      <div style="padding: 14px;">
+        <span>挪威森林猫</span>
+        <div class="bottom clearfix">
+          <discribe class="discribe">挪威森林猫，以白话直译的说法，就是在挪威森林里面栖息的，生存的猫，这是斯堪地半岛特有的品种，其起源不明。</discribe>
+          <el-button type="text" class="button"><router-link to='/sort6'><a href="/sort6" >查看所有</a></router-link></el-button>
+        </div>
+      </div>
+    </el-card>
+  </el-col>
+
+
+</template>
+<style>
+  .discribe {
+    font-size: 13px;
+    color: #999;
+  }
+  
+  .bottom {
+    margin-top: 13px;
+    line-height: 12px;
+  }
+
+  .button {
+    padding: 0;
+    float: right;
+  }
+
+  .image {
+    width: 100%;
+    display: block;
+  }
+
+  .clearfix:before,
+  .clearfix:after {
+      display: table;
+      content: "";
+  }
+  
+  .clearfix:after {
+      clear: both
+  }
+</style>
+
+<script>
+export default {
+  data() {
+    return {
+      currentDate: new Date()
+    };
+  }
+}
+</script>
