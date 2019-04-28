@@ -23,7 +23,19 @@ module.exports = {
       type:'string',
       required:true,
     },
-    picture:{
+    age:{
+      type:'string',
+      required:true,
+    },
+    picture1:{
+      type:'string',
+      required:true,
+    },
+    picture2:{
+      type:'string',
+      required:true,
+    },
+    picture3:{
       type:'string',
       required:true,
     },
