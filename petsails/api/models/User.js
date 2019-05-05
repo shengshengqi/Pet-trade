@@ -37,10 +37,10 @@ module.exports = {
     }
   },
   // Add a reference to Pets
-  pets: {
-    collection: 'pet',
-    via: 'owner'
-  }
+  // pets: {
+  //   collection: 'pet',
+  //   via: 'owner'
+  // }
 
 };
 

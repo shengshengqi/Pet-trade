@@ -7,13 +7,19 @@
 
 module.exports = {
     set_petInfo:async function(req,res){
-        await Pet.Update(req.param('id'),{
+        await Pet.Update({
+            id:req.param('id'),
             petname:req.param('petname'),
             petvariety:req.param('petvariety'),
             info:req.param('info'),
             price:req.param('price'),
             ownerid:req.param('ownerid')
         })
+        if(id){
+            return res.status(200).send({
+                sucessed
+            })
+        }
     },
     get_petInfo:async function(req,res){
         var petInfo = await Pet.findOne({
@@ -84,8 +90,12 @@ module.exports = {
             petname:req.param('petname'),
             petvariety:req.param('petvariety'),
             info:req.param('info'),
-            price:req.param('price'),
-            ownerid:req.param('ownerid')
+            age:req.param('age'),
+            // picture1:req.param('picture1'),
+            // picture2:req.param('picture2'),
+            // picture3:req.param('picture3'),
+            // price:req.param('price'),
+            // ownerid:req.param('ownerid')
         })
     },
     deletes_pet:async function(req,res){

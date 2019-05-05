@@ -48,9 +48,5 @@ module.exports = {
       required:true,
     }
   },
-  owner: {
-    model: 'user'
-  }
-
 };
 
