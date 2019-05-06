@@ -30,14 +30,17 @@ module.exports = {
     picture1:{
       type:'string',
       required:true,
+      autoIncrement: true, 
     },
     picture2:{
       type:'string',
       required:true,
+      autoIncrement: true, 
     },
     picture3:{
       type:'string',
       required:true,
+      autoIncrement: true, 
     },
     ownerid:{
       type:'string',
