@@ -20,22 +20,24 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
-  //user
-  'GET /user/login/id':'UserController.login',
-  'PUT /user/sign_up/id':'UserController.sign_up',
-  'PUT /user/persionInfo/id':'UserController.set_persionInfo',
-  'GET /user/yourpets/id':'UserController.get_yourpet',
-  //trade
-  'GET /trade/info/id':'TradeController.trade_info',
-  //pet
-  'PUT /pet/id':'PetController.set_petInfo',
-  'GET /petInfo/id':'PetController.get_petInfo',
-  'GET /pets/findByVariety':'PetController.search_pet',
-  'POST /pet/image/id':'PetController.uploadImage',
-  'GET /pet/image/id':'PetController.Image',
-  'POST /pet/id':'PetController.create_pet',
-  'DELETE /pet/id':'PetController.deletes_pet',
+  // //user
+  // 'GET /user/login/id':'UserController.login',
+  // 'PUT /user/sign_up/id':'UserController.sign_up',
+  // 'PUT /user/persionInfo/id':'UserController.set_persionInfo',
+  // 'GET /user/yourpets/id':'UserController.get_yourpet',
+  // //trade
+  // 'GET /trade/info/id':'TradeController.trade_info',
+  // //pet
+  // 'PUT /pet/id':'PetController.set_petInfo',
+  // 'GET /petInfo/id':'PetController.get_petInfo',
+  // 'GET /pets/findByVariety':'PetController.search_pet',
+  // 'POST /pet/image/id':'PetController.uploadImage',
+  // 'GET /pet/image/id':'PetController.Image',
+  // 'POST /pet/id':'PetController.create_pet',
+  // 'DELETE /pet/id':'PetController.deletes_pet',
 
+  //pet
+  'GET /pet': {action: 'pet/pet-create'}
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *

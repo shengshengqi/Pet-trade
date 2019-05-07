@@ -8,47 +8,36 @@
 module.exports = {
 
   attributes: {
-
-    petname:{
-   
-      type:'string',
-      required:true,
+    id: {
+       type: 'number', 
+       autoIncrement: true, 
     },
-    petvariety:{
-     
+    petName:{
       type:'string',
-      required:true,
+    },
+    petVariety:{
+      type:'string',
     },
     info:{
       type:'string',
-      required:true,
     },
     age:{
-      type:'string',
-      required:true,
+      type:'number',
+    },
+    price:{
+      type:'number',
     },
     picture1:{
       type:'string',
-      required:true,
-      autoIncrement: true, 
     },
     picture2:{
       type:'string',
-      required:true,
-      autoIncrement: true, 
     },
     picture3:{
       type:'string',
-      required:true,
-      autoIncrement: true, 
     },
     ownerid:{
       type:'string',
-      required:true,
-    },
-    price:{
-      type:'string',
-      required:true,
     }
   },
 };
