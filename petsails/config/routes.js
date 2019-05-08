@@ -27,17 +27,18 @@ module.exports.routes = {
   // 'GET /user/yourpets/id':'UserController.get_yourpet',
   // //trade
   // 'GET /trade/info/id':'TradeController.trade_info',
-  // //pet
-  // 'PUT /pet/id':'PetController.set_petInfo',
-  // 'GET /petInfo/id':'PetController.get_petInfo',
-  // 'GET /pets/findByVariety':'PetController.search_pet',
-  // 'POST /pet/image/id':'PetController.uploadImage',
-  // 'GET /pet/image/id':'PetController.Image',
-  // 'POST /pet/id':'PetController.create_pet',
-  // 'DELETE /pet/id':'PetController.deletes_pet',
 
   //pet
-  'GET /pet': {action: 'pet/pet-create'}
+  'POST /pet': {action: 'pet/pet-create'},
+  'DELETE /pet': {action: 'pet/pet-delete'},
+  'GET /pet/key': {action: 'pet/pet-search'},
+  'PATCH /pet/id': {action: 'pet/pet-update'},
+  'POST /pet/picture/id': {action: 'pet/pet-picture'},
+  //user
+  'POST /user': {action: 'user/user-create'},
+  'POST /user/login': {action: 'user/login'},
+  'PATCH /user/id': {action: 'user/user-update'},
+  
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *

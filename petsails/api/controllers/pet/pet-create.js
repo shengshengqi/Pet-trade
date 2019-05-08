@@ -43,18 +43,18 @@ module.exports = {
 
   fn: async function (inputs, exits) {
     console.log(inputs.petName);
-    await Pet.create({
+    let data = await Pet.create({
         petName:inputs.petName,
         petVariety:inputs.petVariety,
         info:inputs.info,
         age:inputs.age,
         price:inputs.price,
     }).intercept((err)=>{
-      return exits.serverError({info:err})
-    })
-
+      return exits.serverError({info: 'err'})
+    }).fetch()  //.fetch()返回参数
     return exits.success({
-      info:"宠物创建成功"
+      info:"宠物创建成功",
+      id: data.id
     })
   }
 };

@@ -8,32 +8,28 @@
 module.exports = {
 
   attributes: {
-    id: { type: 'number', autoIncrement: true, },
-    username:{
-   
+    id: { 
+      type: 'number', 
+      autoIncrement: true, 
+    },
+    userName:{
       type:'string',
-      required:true,
+      //required:true, 必须时为true
     },
     password:{
-     
       type:'string',
-      required:true,
     },
     telephone:{
-      type:'string',
-      required:true,
+      type:'string'
     },
     picture:{
       type:'string',
-      required:true,
     },
     email:{
       type:'string',
-      required:true,
     },
     signature:{
       type:'string',
-      required:true,
     }
   },
   // Add a reference to Pets
