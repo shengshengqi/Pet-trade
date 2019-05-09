@@ -20,25 +20,21 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
-  // //user
-  // 'GET /user/login/id':'UserController.login',
-  // 'PUT /user/sign_up/id':'UserController.sign_up',
-  // 'PUT /user/persionInfo/id':'UserController.set_persionInfo',
-  // 'GET /user/yourpets/id':'UserController.get_yourpet',
-  // //trade
-  // 'GET /trade/info/id':'TradeController.trade_info',
 
   //pet
-  'POST /pet': {action: 'pet/pet-create'},
-  'DELETE /pet': {action: 'pet/pet-delete'},
-  'GET /pet/key': {action: 'pet/pet-search'},
-  'PATCH /pet/id': {action: 'pet/pet-update'},
-  'POST /pet/picture/id': {action: 'pet/pet-picture'},
+  'POST /pet': {action: 'pet/create'},
+  'DELETE /pet': {action: 'pet/delete'},
+  'GET /pet/key': {action: 'pet/search'},
+  'PATCH /pet/id': {action: 'pet/update'},
+  'POST /pet/picture': {action: 'pet/picture'},
   //user
-  'POST /user': {action: 'user/user-create'},
+  'POST /user': {action: 'user/create'},
   'POST /user/login': {action: 'user/login'},
-  'PATCH /user/id': {action: 'user/user-update'},
-  
+  'PATCH /user/id': {action: 'user/update'},
+  'POST /user/pet': {action: 'user/add-pet'},
+  'DELETE /user/pet': {action: 'user/delete-pet'},
+  //
+
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *

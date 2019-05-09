@@ -36,9 +36,13 @@ module.exports = {
     picture3:{
       type:'string',
     },
-    ownerid:{
-      type:'string',
+    owner: {
+      model: 'user'
     }
+    // owner: {
+    //   collection: 'user',
+    //   via: 'pet',
+    // }
   },
 };
 

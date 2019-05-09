@@ -30,7 +30,12 @@ module.exports = {
     },
     signature:{
       type:'string',
+    },
+    pet: {
+      collection: 'pet',
+      via: 'owner'
     }
+
   },
   // Add a reference to Pets
   // pets: {

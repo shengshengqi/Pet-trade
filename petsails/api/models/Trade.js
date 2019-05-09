@@ -8,7 +8,10 @@
 module.exports = {
 
   attributes: {
-    id: { type: 'number', autoIncrement: true, },
+    id: { 
+      type: 'number', 
+      autoIncrement: true, 
+    },
     buyer:{
    
       type:'string',
