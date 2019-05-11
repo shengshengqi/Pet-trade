@@ -12,31 +12,23 @@ module.exports = {
       type: 'number', 
       autoIncrement: true, 
     },
-    buyer:{
-   
+    buyerName: {
       type:'string',
-      required:true,
     },
-    seller:{
-     
+    sellerName:{
       type:'string',
-      required:true,
     },
     time:{
       type:'string',
-      required:true,
     },
-    petinfo:{
+    petInfo:{
       type:'string',
-      required:true,
     },
-    buyer_address:{
+    buyerAddress:{
       type:'string',
-      required:true,
     },
-    seller_address:{
+    sellerAddress:{
       type:'string',
-      required:true,
     }
   },
 };

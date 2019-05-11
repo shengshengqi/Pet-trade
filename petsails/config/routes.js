@@ -33,7 +33,9 @@ module.exports.routes = {
   'PATCH /user/id': {action: 'user/update'},
   'POST /user/pet': {action: 'user/add-pet'},
   'DELETE /user/pet': {action: 'user/delete-pet'},
-  //
+  //trade
+  'POST /trade': {action: 'trade/trade'}
+  
 
   /***************************************************************************
   *                                                                          *

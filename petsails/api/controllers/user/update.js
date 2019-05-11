@@ -20,6 +20,9 @@ module.exports = {
       signature:{
           type:'string'
       },
+      address:{
+        type:'string'
+      }
     },
   
     exits: {
@@ -38,6 +41,7 @@ module.exports = {
           telephone: inputs.telephone,
           email: inputs.email,
           signature: inputs.signature,
+          address:inputs.address
         })
         if(userUpdate){
             return exits.success({

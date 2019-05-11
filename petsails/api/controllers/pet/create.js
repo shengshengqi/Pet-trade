@@ -36,7 +36,7 @@ module.exports = {
     success: {
       statusCode: 201
     },
-    serverError: {
+    fail: {
       statusCode: 400
     }
   },
