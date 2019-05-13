@@ -1,26 +1,37 @@
 # petsails
 
-a [Sails v1](https://sailsjs.com) application
+## 启动sails
+> cd petsails
 
+进入petsails文件夹
 
-### Links
+> npm start
 
-+ [Sails framework documentation](https://sailsjs.com/get-started)
-+ [Version notes / upgrading](https://sailsjs.com/documentation/upgrading)
-+ [Deployment tips](https://sailsjs.com/documentation/concepts/deployment)
-+ [Community support options](https://sailsjs.com/support)
-+ [Professional / enterprise options](https://sailsjs.com/enterprise)
+启动sails,地址为localhost：1337
 
+> 启动后会需要选择数据库运行模式，请选择3
 
-### Version info
+**启动失败怎么办**
 
-This app was originally generated on Thu Apr 11 2019 14:28:30 GMT+0800 (中国标准时间) using Sails v1.1.0.
+    1、请先确定是否已安装nodemon,如未安装，请先安装
+- 实用开发工具的安装和使用nodemon(可以在代码发生更改的时候自动重启项目，提高开发效率)
+- - `cd rearend`  
+- - `npm install nodemon -g`
+- - 在package.json里面修改启动方式
+- - `"start": "nodemon app.js"`
+- - 最后`npm start`启动
 
-<!-- Internally, Sails used [`sails-generate@1.16.7`](https://github.com/balderdashy/sails-generate/tree/v1.16.7/lib/core-generators/new). -->
+## 数据库设置
+> npm install sails-mysql --save
 
+<a  href ="https://sailsjs.com/config/datastores">数据库配置提示</a>
 
-
-<!--
-Note:  Generators are usually run using the globally-installed `sails` CLI (command-line interface).  This CLI version is _environment-specific_ rather than app-specific, thus over time, as a project's dependencies are upgraded or the project is worked on by different developers on different computers using different versions of Node.js, the Sails dependency in its package.json file may differ from the globally-installed Sails CLI release it was originally generated with.  (Be sure to always check out the relevant [upgrading guides](https://sailsjs.com/upgrading) before upgrading the version of Sails used by your app.  If you're stuck, [get help here](https://sailsjs.com/support).)
--->
-
+### sails.js踩坑笔记
+- 定制路由的时候controller的命名
+  - 只能使用小写字母、“-”，出现大写字母和下划线会出现神秘错误
+  - 比如controller/user下有一个get-pet.js的控制器
+    给这个js文件命名的时候就千万要注意了，不能写成getPet.js的形式，会访问不到
+- 在自己定义的控制器里如果要用req,res就要在前面加上this.req,this.res
+- postman测试时的相关问题
+  - 使用POST类型的form-data，选择文件类型，进行图片上传
+  - 除GET使用param传参之外，其他均使用body传参

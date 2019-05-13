@@ -6,4 +6,7 @@
     "sails": "1.1.0",
     "sails-generate": "1.16.7"
   }
+  "paths":{
+    "public":"public"
+  }
 }
