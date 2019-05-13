@@ -15,7 +15,7 @@
 
     1、请先确定是否已安装nodemon,如未安装，请先安装
 - 实用开发工具的安装和使用nodemon(可以在代码发生更改的时候自动重启项目，提高开发效率)
-- - `cd rearend`  
+- - `cd petsails`  
 - - `npm install nodemon -g`
 - - 在package.json里面修改启动方式
 - - `"start": "nodemon app.js"`
