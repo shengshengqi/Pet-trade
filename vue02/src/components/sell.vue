@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    
+    <Fixbar/>
 <img src="../assets/head.png" width="100%">
 <el-row>
   <el-col :span="24"><div class="grid-content bg-purple-dark"><Header/></div></el-col>
@@ -16,10 +16,12 @@
     import Header from './Header.vue'
     import Upload from './upload.vue'
     import JSBD from './寄售表单.vue'
+    import Fixbar from './fixbar.vue'
     export default {
     components:{
   Header,
   Upload,
+  Fixbar,
   JSBD},
   name: 'App',
   methods:{

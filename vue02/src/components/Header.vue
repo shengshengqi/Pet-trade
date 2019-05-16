@@ -15,34 +15,9 @@
         </el-menu-item>
         <div class="toright">
                 <el-input placeholder="请输入内容" prefix-icon="el-icon-search" v-model="input" ></el-input>
+
               </div>  
-                <el-button type="primary" class="toright2" @click="dialogVisible2 = true">登录</el-button>
-                <el-button type="primary" class="toright1" @click="dialogVisible1 = true">注册</el-button>
-                <el-dialog
-                    title="注册"
-                    :visible.sync="dialogVisible1"
-                    width="30%"
-                    :before-close="handleClose">
-                    <span>用户名：<el-input v-model="input" placeholder="请输入用户名"></el-input></span>
-                    <span>密码：<el-input v-model="input" placeholder="请输入密码"></el-input></span>
-                    <span>确认密码：<el-input v-model="input" placeholder="请输入密码"></el-input></span>
-                    <span slot="footer" class="dialog-footer">
-                        <el-button @click="dialogVisible1 = false">取 消</el-button>
-                        <el-button type="primary" @click="dialogVisible1 = false">确 定</el-button>
-                    </span>
-                </el-dialog>
-                <el-dialog
-                    title="登录"
-                    :visible.sync="dialogVisible2"
-                    width="30%"
-                    :before-close="handleClose">
-                    <span>用户名：<el-input v-model="input" placeholder="请输入用户名"></el-input></span>
-                    <span>密码：<el-input v-model="input" placeholder="请输入密码"></el-input></span>
-                    <span slot="footer" class="dialog-footer">
-                        <el-button @click="dialogVisible2 = false">取 消</el-button>
-                        <el-button type="primary" @click="dialogVisible2 = false">确 定</el-button>
-                    </span>
-                </el-dialog>
+               
     </el-menu>
 </template>
 
@@ -85,26 +60,11 @@ a {
 }
 .toright{
     position:absolute;
-    right: 200px;
+    right: 100px;
     top: 8px;
     font-size: 14px;
     white-space: nowrap;
 }
-.toright1{
-    position:absolute;
-    right: 110px;
-    top: 8px;
-    font-size: 14px;
-    white-space: nowrap;
-    text-decoration: none;
-}
-.toright2{
-    position:absolute;
-    right: 20px;
-    top: 8px;
-    font-size: 14px;
-    white-space: nowrap;
-    text-decoration: none;
-}
+
 
 </style>
