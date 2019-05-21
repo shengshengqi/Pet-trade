@@ -50,38 +50,7 @@ export default {
             };
         },
         methods: {
-            submitRegister(event){
-        let that=this;
-        event.preventDefault();
-        let account=JSON.stringify(this.username);
-        //console.log(account);
-        let password=JSON.stringify(this.password);
-        //console.log(password);
-        let email=JSON.stringify(this.email);
-        //console.log(email);
-       axios({
-            method:'POST',
-            url:'/user',
-            data:{
-                username:this.username,
-                password:this.password
-            }
-            
-        })
-        
-        .then(function(response){
-            console.log(response.data);
-            that.useid=response.data.info.id;
-            console.log("我是用户的id"+ that.useid);
-            that.$router.push({path:'/books/'+ that.useid});
-        })
-        .catch(function(error){
-            console.log(error);
-            alert('error')
-        })
-        
-    },
-            submitLogin(event){
+        submitLogin(event){
         let that=this;
         event.preventDefault();
         let username=JSON.stringify(this.username);
@@ -91,34 +60,16 @@ export default {
         console.log(that.password);
         axios({
             method:'POST',
-            url:'/user/login',
+            url:'/api/user/login',
             data:{
-                username:that.username,
+                userName:that.username,
                 password:that.password
             }
             
         })
         .then(function(response){
             console.log(response.data);
-            if(response.data=='fail to login')
-              alert(response.data);
-            //that.useid=response.data.info.id;
-            //console.log("我是用户的id"+ that.useid);
-            
-            //console.log(that.$store.state.userid);
-            that.$store.dispatch('getNewLoginin',true); //登录状态设置为true
-            console.log(that.$store.state.loginin);
-
-            if(that.$store.state.loginin){
-            that.$store.dispatch('getNewAdmin',response.data.info.admin); //保存用户权限
-            console.log("vuex之后的admin"+that.$store.state.admin);
-            that.$store.dispatch('getNewUserid',response.data.info.id);//保存用户的id
-            console.log("vuex之后"+that.$store.state.userid);
-             that.$store.dispatch('getNewUserName',response.data.info.username);//保存用户的id
-            console.log("vuex之后"+that.$store.state.userName);
-
-            that.$router.push({path:'/loginedhome'});
-            }
+             alert('登陆成功！');
         })
         .catch(function(error){
             //console.log(error);

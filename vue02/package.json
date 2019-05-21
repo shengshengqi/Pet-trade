@@ -13,6 +13,7 @@
     "axios": "^0.18.0",
     "element": "^0.1.4",
     "element-ui": "^2.7.2",
+    "js-cookie": "^2.2.0",
     "vue": "^2.5.2",
     "vue-cookies": "^1.5.13",
     "vue-resource": "^1.5.1",
