@@ -22,7 +22,7 @@ module.exports = {
     telephone:{
       type:'string'
     },
-    picture:{
+    avatar:{
       type:'string',
     },
     email:{

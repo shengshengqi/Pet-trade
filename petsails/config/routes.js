@@ -26,15 +26,18 @@ module.exports.routes = {
   'DELETE /pet': {action: 'pet/delete'},
   'GET /pet/key': {action: 'pet/search'},
   'PATCH /pet/id': {action: 'pet/update'},
+  'GET /pet/all': {action: 'pet/getall'},
   'POST /pet/picture': {action: 'pet/picture'},
   //user
   'POST /user': {action: 'user/create'},
   'POST /user/login': {action: 'user/login'},
   'PATCH /user/id': {action: 'user/update'},
   'POST /user/pet': {action: 'user/add-pet'},
+  'POST /user/avatar': {action: 'user/avatar'},
   'DELETE /user/pet': {action: 'user/delete-pet'},
   //trade
-  'POST /trade': {action: 'trade/trade'}
+  'POST /trade': {action: 'trade/trade'},
+  'GET /trade': {action: 'trade/table'}
   
 
   /***************************************************************************

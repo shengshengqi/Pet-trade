@@ -1,7 +1,7 @@
 module.exports = {
     friendlyName: 'update pet message',
 
-    description: '修改宠物信息',
+    description: '修改用户信息',
   
     inputs: {
       id: {
