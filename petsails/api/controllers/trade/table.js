@@ -29,7 +29,11 @@ module.exports = {
                 { petinfo: { 'contains': inputs.key } },
             ]
         })
-      
+        if (info[0]) {
+            return exits.success({ info });
+        } else {
+            return exits.notFound();
+        }
     }
   };
   
