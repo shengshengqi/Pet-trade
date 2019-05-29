@@ -36,6 +36,9 @@ module.exports = {
     picture3:{
       type:'string',
     },
+    find:{
+      type:'number',
+    },
     owner: {
       model: 'user'
     }

@@ -26,18 +26,19 @@ module.exports = {
     },
   
     fn: async function (inputs, exits) {
-  
-      let userInfo = await User.find({ id: inputs.userId })
-      let petInfo = await Pet.find({ id: inputs.petId })
-      if (userInfo[0] && petInfo[0]) {
-        try {
-          await User.removeFromCollection(inputs.userId, 'pet', inputs.petId);
-          return exits.success({ info: true })
-        } catch (err) {
-          return exits.fail({ info: err })
+      if(this.req.session.userId){
+        let userInfo = await User.find({ id: inputs.userId })
+        let petInfo = await Pet.find({ id: inputs.petId })
+        if (userInfo[0] && petInfo[0]) {
+          try {
+            await User.removeFromCollection(inputs.userId, 'pet', inputs.petId);
+            return exits.success({ info: true })
+          } catch (err) {
+            return exits.fail({ info: err })
+          }
+        } else {
+          return exits.fail({ info: false })
         }
-      } else {
-        return exits.fail({ info: false })
-      }
+    }
     }
   }

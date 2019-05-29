@@ -17,6 +17,22 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-   '*': true,
-
+  // '*': true,
+   //pet
+   'pet/create':'isLoggedIn',
+   'pet/delete':'isLoggedIn',
+   'pet/search':'isLoggedIn',
+   'pet/update':'isLoggedIn',
+   'pet/getall':'isLoggedIn',
+   'pet/picture':'isLoggedIn',
+   //user
+   'user/create':'isLoggedIn',
+   'user/login':true,
+   'user/update':'isLoggedIn',
+   'user/add-pet':'isLoggedIn',
+   'user/avatar':'isLoggedIn',
+   'user/delete-pet':'isLoggedIn',
+   //trade
+   'trade/trade':'isLoggedIn',
+   'trade/table':'isLoggedIn',
 };

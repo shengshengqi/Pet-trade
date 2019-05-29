@@ -36,6 +36,7 @@ module.exports = {
   
   
     fn: async function (inputs, exits) {
+      if(this.req.session.userId){
         let userUpdate=await User.updateOne({id:inputs.id}).set({
           userName: inputs.userName,
           telephone: inputs.telephone,
@@ -52,5 +53,6 @@ module.exports = {
                 info: "用户信息更新失败"
             })
         }
+      }
     }
   }

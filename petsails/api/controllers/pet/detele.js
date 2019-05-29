@@ -27,13 +27,15 @@ module.exports = {
   },
 
   fn: async function (inputs, exits) {
-    await Pet.destroy({
-        id: inputs.id,
-        petName: inputs.petName,
-      }).intercept((err) => {
-        return exits.fail({ info: 'err' })
-      });
-      
-      return exits.success({ info:"删除成功" })
+    if(this.req.session.userId){
+      await Pet.destroy({
+          id: inputs.id,
+          petName: inputs.petName,
+        }).intercept((err) => {
+          return exits.fail({ info: 'err' })
+        });
+        
+        return exits.success({ info:"删除成功" })
   }
+}
 };

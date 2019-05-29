@@ -21,18 +21,20 @@ module.exports = {
     },
 
     fn: async function (inputs, exits) {
-        let info = await Pet.find({
-            or: [
-                { petVariety: { 'contains': inputs.key } },
-                { petName: { 'contains': inputs.key } },
-                { info: { 'contains': inputs.key } },
-            ]
-        })
+        if(this.req.session.userId){
+            let info = await Pet.find({
+                or: [
+                    { petVariety: { 'contains': inputs.key } },
+                    { petName: { 'contains': inputs.key } },
+                    { info: { 'contains': inputs.key } },
+                ]
+            })
 
-        if (info[0]) {
-            return exits.success({ info });
-        } else {
-            return exits.notFound();
-        }
+            if (info[0]) {
+                return exits.success({ info });
+            } else {
+                return exits.notFound();
+            }
+    }
     }
 };

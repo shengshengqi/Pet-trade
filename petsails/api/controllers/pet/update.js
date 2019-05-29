@@ -37,6 +37,7 @@ module.exports = {
   
   
     fn: async function (inputs, exits) {
+      if(this.req.session.userId){
         let petUpdate=await Pet.updateOne({id:inputs.id}).set({
           petName: inputs.petName,
           petVariety: inputs.petVariety,
@@ -53,5 +54,6 @@ module.exports = {
                 info: "宠物信息更新失败"
             })
         }
+      }
     }
   }

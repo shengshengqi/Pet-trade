@@ -30,7 +30,8 @@ module.exports = {
         password: inputs.password,
       })
   
-      if (userInfo) {     
+      if (userInfo) { 
+        this.req.session.userId = userInfo.id 
         return exits.success({ info: userInfo })
       } else {
         return exits.fail({info: '登陆失败'})

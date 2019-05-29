@@ -29,7 +29,7 @@ module.exports = {
       description: '价格.',
       type: 'number',
       required: true
-    }
+    },
   },
 
   exits: {
@@ -42,13 +42,14 @@ module.exports = {
   },
 
   fn: async function (inputs, exits) {
-    console.log(inputs.petName);
-    let data = await Pet.create({
+    if(this.req.session.userId){
+      let data = await Pet.create({
         petName:inputs.petName,
         petVariety:inputs.petVariety,
         info:inputs.info,
         age:inputs.age,
         price:inputs.price,
+        find:0
     }).intercept((err)=>{
       return exits.serverError({info: 'err'})
     }).fetch()  //.fetch()返回参数
@@ -56,5 +57,6 @@ module.exports = {
       info:"宠物创建成功",
       id: data.id
     })
+    }
   }
 };

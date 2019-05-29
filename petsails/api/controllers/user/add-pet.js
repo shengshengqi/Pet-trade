@@ -26,24 +26,26 @@ module.exports = {
   
     
     fn: async function (inputs, exits) {
-      var userInfo = await User.find({
-        id: inputs.userId,
-      })
-      var petInfo = await Pet.find({
-        id: inputs.petId,
-      })
-  
-      if (userInfo[0] && petInfo[0]) {
-        // console.log(userInfo);
-        // console.log(petInfo);
-        try {
-          await User.addToCollection(inputs.userId, 'pet',inputs.petId);
-          return exits.success({ info: true })
-        } catch (err) {
-          return exits.fail({ info: err})
+      if(this.req.session.userId){
+        var userInfo = await User.find({
+          id: inputs.userId,
+        })
+        var petInfo = await Pet.find({
+          id: inputs.petId,
+        })
+    
+        if (userInfo[0] && petInfo[0]) {
+          // console.log(userInfo);
+          // console.log(petInfo);
+          try {
+            await User.addToCollection(inputs.userId, 'pet',inputs.petId);
+            return exits.success({ info: true })
+          } catch (err) {
+            return exits.fail({ info: err})
+          }
+        } else {
+          return exits.fail({ info: false })
         }
-      } else {
-        return exits.fail({ info: false })
       }
     }
   }

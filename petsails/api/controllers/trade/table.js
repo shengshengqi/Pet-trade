@@ -22,17 +22,19 @@ module.exports = {
     },
   
     fn: async function (inputs, exits) {
-        let info = await Trade.find({
-            or: [
-                { buyerName: { 'contains': inputs.key } },
-                { sellerName: { 'contains': inputs.key } },
-                { petinfo: { 'contains': inputs.key } },
-            ]
-        })
-        if (info[0]) {
-            return exits.success({ info });
-        } else {
-            return exits.notFound();
+        if(this.req.session.userId){
+            let info = await Trade.find({
+                or: [
+                    { buyerName: { 'contains': inputs.key } },
+                    { sellerName: { 'contains': inputs.key } },
+                    { petinfo: { 'contains': inputs.key } },
+                ]
+            })
+            if (info[0]) {
+                return exits.success({ info });
+            } else {
+                return exits.notFound();
+            }
         }
     }
   };
