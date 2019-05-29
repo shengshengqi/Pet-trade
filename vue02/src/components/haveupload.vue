@@ -3,64 +3,21 @@
     <Fixbar/>
 <img src="../assets/head.png" width="100%">
 <el-row>
-  <el-col :span="24"><div class="grid-content bg-purple-dark">
-    <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="white" text-color="brown" active-text-color="#ffd04b">
-       <el-menu-item index="1"> <router-link to='/home'><a href="/home">首页</a></router-link></el-menu-item>
-        <el-menu-item index="2"><router-link to='/sort1'><a href="/sort1">查看所有</a></router-link></el-menu-item>
-        <el-menu-item index="3" @click="warnlogin">寄售</el-menu-item>
-        <div class="toright">
-                <el-input placeholder="请输入内容" prefix-icon="el-icon-search" v-model="input" ></el-input>
-
-              </div>  
-               
-    </el-menu>
-    </div></el-col>
+<Header/>
 </el-row>
-<ZMD/>
-<el-row>
-  </el-row>
-<h1>SPETS.COM</h1>
-
-
-<div class="block">
-  <span class="demonstration">
-  <el-row>
-    <BOCard/>
-    <YDCard/>
-    <XLCard/>
-  </el-row>
-  <el-row>
-    <br/>
-  </el-row>
-  <el-row>
-    <SGCard/>
-    <BSCard/>
-    <NWCard/>
-  </el-row>
-  </span>
-  <el-pagination
-    layout="prev, pager, next"
-    :total="50">
-  </el-pagination>
+<el-row class="tac">
+  <el-col :span="5">
+<Cmenu/>
+  </el-col>
+</el-row>
 </div>
 
-
-    
-    
-  </div>
-  
 </template>
 
 <script>
     import Header from './Header.vue'
-    import BOCard from './布偶猫card.vue'
-    import YDCard from './英国短毛猫card.vue'
-    import XLCard from './暹罗猫card.vue'
-    import BSCard from './波斯猫card.vue'
-    import SGCard from './苏格兰折耳猫card.vue'
-    import NWCard from './挪威森林猫card.vue'
-    import ZMD from './走马灯.vue'
     import Fixbar from './fixbar.vue'
+    import Cmenu from './cmenu.vue'
 export default {
   data() {
             return {
@@ -72,7 +29,15 @@ export default {
                 name: ''
             };
         },
-
+        mounted(){
+            /*页面挂载获取保存的cookie值，渲染到页面上*/
+            let uname = getCookie('username')
+            this.name = uname
+            /*如果cookie不存在，则跳转到登录页*/
+            if(uname == ""){
+                this.$router.push('/')
+            }
+        },
         methods: {
             handleSelect(key, keyPath) {
                 console.log(key, keyPath);
@@ -84,18 +49,17 @@ export default {
             done();
           })
              .catch(_ => {});
-      }
+      },
+      quit(){
+                /*删除cookie*/
+                delCookie('username')
+            }
     },
     components:{
   Header,
-  BOCard,
-  YDCard,
-  XLCard,
-  SGCard,
-  BSCard,
-  NWCard,
   Fixbar,
-  ZMD
+  Cmenu
+
  },
  
   name: 'App',

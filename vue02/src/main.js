@@ -9,8 +9,12 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import App from './App.vue';
 import VueResource from 'vue-resource';
+import Vuex from 'vuex';
 Vue.use(VueResource);
 Vue.use(ElementUI);
+Vue.config.productionTip = false ;
+Vue.use(Vuex) ;
+//Vue.prototype.$http=axios;
 
 //Vue.prototype.$http=axios;
 

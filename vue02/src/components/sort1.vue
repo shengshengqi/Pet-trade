@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    
+    <Fixbar/>
 <img src="../assets/head.png" width="100%">
 <el-row>
   <el-col :span="24"><div class="grid-content bg-purple-dark"><Header/></div></el-col>
@@ -26,11 +26,12 @@
 <script>
     import Header from './Header.vue'
     import sorttable1 from './sorttable/sorttable1.vue'
-
+    import Fixbar from './fixbar.vue'
 export default {
     components:{
   Header,
-  sorttable1
+  sorttable1,
+  Fixbar
  },
   name: 'App',
   methods:{
