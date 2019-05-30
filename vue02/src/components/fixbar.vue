@@ -9,9 +9,9 @@
                     width="30%"
                     :before-close="handleClose">
                     <el-form ref="form" :model="form" label-width="80px">
-                    <el-form-item label="用户名"><el-input v-model="username" placeholder="请输入用户名"></el-input></el-form-item>
-                    <el-form-item label="密码"><el-input v-model="password" placeholder="请输入密码"></el-input></el-form-item>
-                    <el-form-item label="确认密码"><el-input v-model="repassword" placeholder="请输入密码"></el-input></el-form-item>
+                    <el-form-item label="用户名"><el-input v-model="reusername" placeholder="请输入用户名"></el-input></el-form-item>
+                    <el-form-item label="密码"><el-input v-model="repassword" placeholder="请输入密码"></el-input></el-form-item>
+                    <el-form-item label="确认密码"><el-input v-model="dpassword" placeholder="请输入密码"></el-input></el-form-item>
                     </el-form>
                     <span slot="footer" class="dialog-footer">
                         <el-button @click="dialogVisible1 = false">取 消</el-button>
@@ -44,7 +44,9 @@ export default {
                 activeIndex2: '1',
                 username: '',
                 password: '',
+                reusername:'',
                 repassword: '',
+                dpassword:'',
                 dialogVisible1: false,
                 dialogVisible2: false
             };
@@ -75,6 +77,38 @@ export default {
             //console.log(error);
             alert('用户名或密码错误！')
            // console.log(error.status);
+        })
+        
+    },
+    submitRegister(event){
+        let that=this;
+        event.preventDefault();
+        let account=JSON.stringify(this.reusername);
+
+        let password=JSON.stringify(this.repassword);
+
+        let dpassword=JSON.stringify(this.dpassword);
+
+       axios({
+            method:'POST',
+            url:'/api/user',
+            data:{
+                userName:this.reusername,
+                password:this.repassword,
+                dpassword:this.dpassword
+            }
+            
+        })
+        
+        .then(function(response){
+            console.log(response.data);
+            that.useid=response.data.info.id;
+            console.log("我是用户的id"+ that.useid);
+            alert('创建成功！');
+        })
+        .catch(function(error){
+            console.log(error);
+            alert('error')
         })
         
     }, 
