@@ -9,9 +9,9 @@
                     width="30%"
                     :before-close="handleClose">
                     <el-form ref="form" :model="form" label-width="80px">
-                    <el-form-item label="用户名"><el-input v-model="reusername" placeholder="请输入用户名"></el-input></el-form-item>
-                    <el-form-item label="密码"><el-input v-model="repassword" placeholder="请输入密码"></el-input></el-form-item>
-                    <el-form-item label="确认密码"><el-input v-model="dpassword" placeholder="请输入密码"></el-input></el-form-item>
+                    <el-form-item label="用户名"><el-input v-model="form.reusername" placeholder="请输入用户名"></el-input></el-form-item>
+                    <el-form-item label="密码"><el-input v-model="form.repassword" placeholder="请输入密码"></el-input></el-form-item>
+                    <el-form-item label="确认密码"><el-input v-model="form.dpassword" placeholder="请输入密码"></el-input></el-form-item>
                     </el-form>
                     <span slot="footer" class="dialog-footer">
                         <el-button @click="dialogVisible1 = false">取 消</el-button>
@@ -24,8 +24,8 @@
                     width="30%"
                     :before-close="handleClose">
                    <el-form ref="form" :model="form" method="post" label-width="80px">
-                    <el-form-item label="用户名"><el-input v-model="username" placeholder="请输入用户名"></el-input></el-form-item>
-                    <el-form-item label="密码"><el-input v-model="password" placeholder="请输入密码"></el-input></el-form-item>
+                    <el-form-item label="用户名"><el-input v-model="form.username" placeholder="请输入用户名"></el-input></el-form-item>
+                    <el-form-item label="密码"><el-input v-model="form.password" placeholder="请输入密码"></el-input></el-form-item>
                    </el-form>
                     <span slot="footer" class="dialog-footer">
                         <el-button @click="dialogVisible2 = false">取 消</el-button>
@@ -42,11 +42,13 @@ export default {
             return {
                 activeIndex: '1',
                 activeIndex2: '1',
+                form:{
                 username: '',
                 password: '',
                 reusername:'',
                 repassword: '',
-                dpassword:'',
+                dpassword:''
+                },
                 dialogVisible1: false,
                 dialogVisible2: false
             };
@@ -55,17 +57,17 @@ export default {
         submitLogin(event){
         let that=this;
         event.preventDefault();
-        let username=JSON.stringify(this.username);
+        let username=JSON.stringify(this.form.username);
         //console.log(account);
-        let password=JSON.stringify(this.password);
-        console.log(that.username);
-        console.log(that.password);
+        let password=JSON.stringify(this.form.password);
+        console.log(that.form.username);
+        console.log(that.form.password);
         axios({
             method:'POST',
             url:'/api/user/login',
             data:{
-                userName:that.username,
-                password:that.password
+                userName:that.form.username,
+                password:that.form.password
             }
             
         })
@@ -83,19 +85,19 @@ export default {
     submitRegister(event){
         let that=this;
         event.preventDefault();
-        let account=JSON.stringify(this.reusername);
+        let account=JSON.stringify(this.form.reusername);
 
-        let password=JSON.stringify(this.repassword);
+        let password=JSON.stringify(this.form.repassword);
 
-        let dpassword=JSON.stringify(this.dpassword);
+        let dpassword=JSON.stringify(this.form.dpassword);
 
        axios({
             method:'POST',
             url:'/api/user',
             data:{
-                userName:this.reusername,
-                password:this.repassword,
-                dpassword:this.dpassword
+                userName:this.form.reusername,
+                password:this.form.repassword,
+                dpassword:this.form.dpassword
             }
             
         })
