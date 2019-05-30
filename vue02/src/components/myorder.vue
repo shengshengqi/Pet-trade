@@ -10,7 +10,7 @@
 <Cmenu/>
   </el-col>
   <el-col :span="19">
-      <ordertable/>
+      <ordertable v-bind="this.table"/>
   </el-col>
 </el-row>
 </div>
@@ -23,22 +23,29 @@
     import Cmenu from './cmenu.vue'
     import Ordertable from './sorttable/ordertable.vue'
 export default {
-  data() {
-            return {
-                activeIndex: '1',
-                activeIndex2: '1',
-                input: '',
-                dialogVisible1: false,
-                dialogVisible2: false,
-                name: ''
-            };
-        },
-        mounted(){
-
-        },
-        methods: {
-
-    },
+ data:()=>({
+   table:[]
+ }),
+  mounted: function(){
+    this.getallorder()
+  },
+  methods:{
+    getallorder(){
+       axios({
+            method:'GET',
+            url:'/api/trade',
+        })
+        .then((response)=>{
+            // console.log(response.data);
+            this.table=response.data.info;
+        })
+        .catch(function(error){
+            console.log(error);
+            alert('error')
+        })
+    }
+  	
+  },
     components:{
   Header,
   Fixbar,

@@ -44,9 +44,6 @@ export default {
  
   name: 'App',
   methods:{
-  	warnlogin(){
-      this.$alert('请先登录！')
-    }
   }
 }
 </script>
