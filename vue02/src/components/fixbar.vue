@@ -7,7 +7,7 @@
                     title="注册"
                     :visible.sync="dialogVisible1"
                     width="30%"
-                    :before-close="handleClose">
+                    >
                     <el-form ref="form" :model="form" label-width="80px">
                     <el-form-item label="用户名"><el-input v-model="form.reusername" placeholder="请输入用户名"></el-input></el-form-item>
                     <el-form-item label="密码"><el-input v-model="form.repassword" placeholder="请输入密码"></el-input></el-form-item>
@@ -22,7 +22,7 @@
                     title="登录"
                     :visible.sync="dialogVisible2"
                     width="30%"
-                    :before-close="handleClose">
+                    >
                    <el-form ref="form" :model="form" method="post" label-width="80px">
                     <el-form-item label="用户名"><el-input v-model="form.username" placeholder="请输入用户名"></el-input></el-form-item>
                     <el-form-item label="密码"><el-input v-model="form.password" placeholder="请输入密码"></el-input></el-form-item>
@@ -114,17 +114,7 @@ export default {
         })
         
     }, 
-            handleSelect(key, keyPath) {
-                console.log(key, keyPath);
-            },
-            
-            handleClose(done) {
-            this.$confirm('确认关闭？')
-            .then(_ => {
-            done();
-          })
-             .catch(_ => {});
-      }
+
     },
 }
 </script>

@@ -38,7 +38,6 @@ export default {
         .then((response)=>{
             // console.log(response.data);
             this.table=response.data.info;
-            alert('成功！');
         })
         .catch(function(error){
             console.log(error);

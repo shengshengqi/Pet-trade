@@ -37,30 +37,10 @@ export default {
             };
         },
         mounted(){
-            /*页面挂载获取保存的cookie值，渲染到页面上*/
-            let uname = getCookie('username')
-            this.name = uname
-            /*如果cookie不存在，则跳转到登录页*/
-            if(uname == ""){
-                this.$router.push('/')
-            }
+
         },
         methods: {
-            handleSelect(key, keyPath) {
-                console.log(key, keyPath);
-            },
-            
-            handleClose(done) {
-            this.$confirm('确认关闭？')
-            .then(_ => {
-            done();
-          })
-             .catch(_ => {});
-      },
-      quit(){
-                /*删除cookie*/
-                delCookie('username')
-            }
+
     },
     components:{
   Header,

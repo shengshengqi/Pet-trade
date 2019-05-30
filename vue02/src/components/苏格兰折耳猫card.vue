@@ -6,7 +6,7 @@
       <div style="padding: 14px;">
         <span>苏格兰折耳猫</span>
         <div class="bottom clearfix">
-          <discribe class="discribe">苏格兰折耳猫是猫的一种在耳朵有基因突变的猫种。由于这猫种最初在苏格兰发现，所以以它的发现地和身体特征而命名。</discribe>
+          <p class="discribe">苏格兰折耳猫是猫的一种在耳朵有基因突变的猫种。由于这猫种最初在苏格兰发现，所以以它的发现地和身体特征而命名。</p>
           <el-button type="text" class="button"><router-link to='/sort4'><a href="/sort4" >查看所有</a></router-link></el-button>
         </div>
       </div>
@@ -19,6 +19,7 @@
   .discribe {
     font-size: 13px;
     color: #999;
+        text-align: left;
   }
   
   .bottom {

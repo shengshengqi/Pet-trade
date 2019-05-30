@@ -2,8 +2,7 @@
     <el-menu
       default-active="2"
       class="el-menu-vertical-demo"
-      @open="handleOpen"
-      @close="handleClose">
+>
       <el-menu-item index="3">
           <router-link to='/userimformation'><a href="/userimformation">个人信息</a></router-link>
       </el-menu-item>
@@ -20,12 +19,6 @@
 <script>
   export default {
     methods: {
-      handleOpen(key, keyPath) {
-        console.log(key, keyPath);
-      },
-      handleClose(key, keyPath) {
-        console.log(key, keyPath);
-      }
     }
   }
 </script>

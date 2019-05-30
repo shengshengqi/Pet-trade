@@ -17,17 +17,7 @@
             };
         },
         methods: {
-            handleSelect(key, keyPath) {
-                console.log(key, keyPath);
-            },
-            
-            handleClose(done) {
-            this.$confirm('确认关闭？')
-            .then(_ => {
-            done();
-          })
-             .catch(_ => {});
-      }
+
     }
         };
     
