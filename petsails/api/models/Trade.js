@@ -8,9 +8,9 @@
 module.exports = {
 
   attributes: {
-    id: { 
-      type: 'number', 
-      autoIncrement: true, 
+    id: {
+      type: 'number',
+      autoIncrement: true,
     },
     buyerName: {
       type:'string',
@@ -29,6 +29,9 @@ module.exports = {
     },
     sellerAddress:{
       type:'string',
+    },
+    finished:{
+      type:'boolean'
     }
   },
 };

@@ -8,9 +8,9 @@
 module.exports = {
 
   attributes: {
-    id: { 
-      type: 'number', 
-      autoIncrement: true, 
+    id: {
+      type: 'number',
+      autoIncrement: true,
     },
     userName:{
       type:'string',
@@ -37,7 +37,7 @@ module.exports = {
     pet: {
       collection: 'pet',
       via: 'owner'
-    },
+    }
   },
   // Add a reference to Pets
   // pets: {

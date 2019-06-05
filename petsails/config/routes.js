@@ -38,8 +38,9 @@ module.exports.routes = {
   'DELETE /user/pet': {action: 'user/delete-pet'},
   //trade
   'POST /trade': {action: 'trade/trade'},
-  'GET /trade': {action: 'trade/table'}
-  
+  'GET /trade': {action: 'trade/table'},
+  'POST /deal': {action: 'trade/deal'}
+
 
   /***************************************************************************
   *                                                                          *
