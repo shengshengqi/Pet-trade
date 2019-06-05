@@ -50,7 +50,7 @@ module.exports = {
         petInfo: petInfo[0].info,
         buyerAddress: buyerInfo[0].address,
         sellerAddress: sellerInfo[0].address,
-        finished: false
+        finished: 0
       }).intercept((err)=>{
         return exits.fail({info: 'err'});
       }).fetch();  //.fetch()返回参数

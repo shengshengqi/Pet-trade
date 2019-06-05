@@ -26,7 +26,7 @@ module.exports = {
       let data = await Trade.updateOne({
         id: inputs.tradeId
       }).set({
-        deal: true
+        deal: 1
       }); //.fetch()返回参数
       if(date){
         return exits.success({

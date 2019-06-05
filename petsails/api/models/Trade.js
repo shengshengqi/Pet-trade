@@ -31,7 +31,7 @@ module.exports = {
       type:'string',
     },
     finished:{
-      type:'boolean'
+      type:'number'
     }
   },
 };
