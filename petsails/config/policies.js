@@ -32,6 +32,7 @@ module.exports.policies = {
    'user/add-pet':'isLoggedIn',
    'user/avatar':'isLoggedIn',
    'user/delete-pet':'isLoggedIn',
+   'user/search':'isLoggedIn',
    //trade
    'trade/trade':'isLoggedIn',
    'trade/table':'isLoggedIn',

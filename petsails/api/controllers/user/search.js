@@ -23,9 +23,7 @@ module.exports = {
     fn: async function (inputs, exits) {
         if(this.req.session.userId){
             let info = await Pet.find({
-                or: [
-                    { petVariety: { 'owner': inputs.id} },
-                ]
+               owner:inputs.id
             })
 
             if (info[0]) {

@@ -32,6 +32,7 @@ module.exports.routes = {
   'POST /user': {action: 'user/create'},
   'POST /user/login': {action: 'user/login'},
   'PATCH /user/id': {action: 'user/update'},
+  'GET /pet/user/id': {action: 'user/search'},
   'POST /user/pet': {action: 'user/add-pet'},
   'POST /user/avatar': {action: 'user/avatar'},
   'DELETE /user/pet': {action: 'user/delete-pet'},
