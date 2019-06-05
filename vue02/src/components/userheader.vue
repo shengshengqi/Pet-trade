@@ -8,7 +8,7 @@
     export default {
         data() {
             return {
-                
+                username=this.username
             };
         },
         methods: {

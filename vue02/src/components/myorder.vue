@@ -54,7 +54,7 @@ export default {
 
  },
  
-  name: 'App',
+  name: 'Myorder',
   methods:{
 
   }

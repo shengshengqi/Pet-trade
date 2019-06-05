@@ -7,7 +7,10 @@
 </el-row>
 <el-row class="tac">
   <el-col :span="5">
-<Cmenu/>
+  <Cmenu/>
+  </el-col>
+  <el-col :span="19">
+  <sorttable1 v-bind:info="this.table"/>
   </el-col>
 </el-row>
 </div>
@@ -15,35 +18,40 @@
 </template>
 
 <script>
+    import axios from 'axios';
     import Header from './Header.vue'
+    import sorttable1 from './sorttable/sorttable1.vue'
     import Fixbar from './fixbar.vue'
     import Cmenu from './cmenu.vue'
 export default {
-  data() {
-            return {
-                activeIndex: '1',
-                activeIndex2: '1',
-                input: '',
-                dialogVisible1: false,
-                dialogVisible2: false,
-                name: ''
-            };
-        },
-        mounted(){
-
-        },
-        methods: {
-
-    },
     components:{
   Header,
+  sorttable1,
   Fixbar,
   Cmenu
-
  },
- 
-  name: 'App',
+ data:()=>({
+   table:[]
+ }),
+  mounted:function(){
+    this.getuserspet()
+  },
   methods:{
+    getuserspet(){
+       axios({
+            method:'GET',
+            url:'/api/pet/user/id',
+        })
+        .then((response)=>{
+            // console.log(response.data);
+            this.table=response.data.info;
+        })
+        .catch(function(error){
+            console.log(error);
+            alert('error')
+        })
+    }
+  	
   }
 }
 </script>
@@ -57,12 +65,6 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-  .fixedBar {
-	    position: fixed;
-	    top: 0;
-	    z-index: 998;
-	    width: 100%;
-	}
   .el-row {
     margin-bottom: 20px;
   }
@@ -86,19 +88,5 @@ export default {
     padding: 10px 0;
     background-color: #f9fafc;
   }
-a {
-  text-decoration: none;
-  color: brown;
-}
- 
-.router-link-active {
-  text-decoration: none;
-}
-.toright{
-    position:absolute;
-    right: 100px;
-    top: 8px;
-    font-size: 14px;
-    white-space: nowrap;
-}
+
 </style>

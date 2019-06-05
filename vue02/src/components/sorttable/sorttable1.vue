@@ -52,7 +52,6 @@
         }
       },
       mounted: function(){
-console.log(this.info);
 
 
   },
