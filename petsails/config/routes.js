@@ -39,7 +39,7 @@ module.exports.routes = {
   //trade
   'POST /trade': {action: 'trade/trade'},
   'GET /trade': {action: 'trade/table'},
-  'POST /deal': {action: 'trade/deal'}
+  'POST /trade/deal': {action: 'trade/deal'}
 
 
   /***************************************************************************
