@@ -23,7 +23,7 @@ module.exports = {
 
   fn: async function (inputs, exits) {
     if(this.req.session.userId){
-      let data = await Trade.updateOne({
+      let date = await Trade.updateOne({
         id: inputs.tradeId
       }).set({
         deal: 1
