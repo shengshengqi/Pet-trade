@@ -36,4 +36,5 @@ module.exports.policies = {
    //trade
    'trade/trade':'isLoggedIn',
    'trade/table':'isLoggedIn',
+   'trade/deal':'isLoggedIn',
 };
