@@ -1,25 +1,50 @@
 <template>
     <el-table
-      :data="tableData"
+      :data="this.info"
       style="width: 100%">
       <el-table-column
         prop="id"
         label="订单编号"
-        width="300">
+        width="100">
       </el-table-column>
       <el-table-column
-        prop="name"
-        label="昵称"
-        width="180">
+        prop="buyerName"
+        label="买家昵称"
+        width="100">
       </el-table-column>
       <el-table-column
-        prop="price"
-        label="成交价格"
-        width="180">
+        prop="sellerName"
+        label="卖家昵称"
+        width="100">
       </el-table-column>
         <el-table-column
-        prop="buysell"
-        label="买/卖"
+        prop="time"
+        label="时间"
+        width="100"
+        >
+      </el-table-column>
+      <el-table-column
+        prop="petInfo"
+        label="宠物详情"
+        width="100"
+        >
+      </el-table-column>
+      <el-table-column
+        prop="petInfo"
+        label="宠物详情"
+        width="100"
+        >
+      </el-table-column>
+      <el-table-column
+        prop="buyerAddress"
+        label="买家地址"
+        width="100"
+        >
+      </el-table-column>
+      <el-table-column
+        prop="sellerAddress"
+        label="卖家地址"
+        width="100"
         >
       </el-table-column>
     </el-table>
@@ -27,16 +52,11 @@
 
   <script>
     export default {
-      data() {
-        return {
-          tableData: [{
-            id: '',
-            name: '',
-            price: '',
-            buysell:''
-          } 
-          ]
+      name:'ordertable',
+      props:{
+        info:{
+          type:Array
         }
-      }
+      },
     }
   </script>

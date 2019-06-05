@@ -1,15 +1,26 @@
 <template>
     <el-table
-      :data="tableData"
+      :data="this.info"
       style="width: 100%">
       <el-table-column
-        prop="discribe"
-        label="描述"
-        width="360">
+        prop="id"
+        label="id"
+        width="180"
+        >
       </el-table-column>
       <el-table-column
-        prop="nation"
+        prop="petName"
+        label="name"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="petVariety"
         label="种类"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="info"
+        label="描述"
         width="180">
       </el-table-column>
       <el-table-column
@@ -17,9 +28,16 @@
         label="年龄"
         width="180">
       </el-table-column>
-        <el-table-column
+      <el-table-column
         prop="price"
         label="价格"
+        width="180"
+        >
+      </el-table-column>
+      <el-table-column
+        prop="owner"
+        label="owner"
+        width="180"
         >
       </el-table-column>
     </el-table>
@@ -27,16 +45,16 @@
 
   <script>
     export default {
-      data() {
-        return {
-          tableData: [{
-            discribe: '2016-05-02',
-            nation: '',
-            age: '5',
-            price:'¥1000'
-          } 
-          ]
+      name:"sorttable1",
+      props:{
+        info:{
+          type:Array
         }
-      }
+      },
+      mounted: function(){
+console.log(this.info);
+
+
+  },
     }
   </script>

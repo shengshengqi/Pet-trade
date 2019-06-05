@@ -6,7 +6,7 @@
       <div style="padding: 14px;">
         <span>波斯猫</span>
         <div class="bottom clearfix">
-          <discribe class="discribe">波斯猫是以阿富汗的土种长毛猫和土耳其的安哥拉长毛猫为基础，在英国经过100多年的选种繁殖，于1860年诞生的一个品种。</discribe>
+          <p class="discribe">波斯猫是以阿富汗的土种长毛猫和土耳其的安哥拉长毛猫为基础，在英国经过100多年的选种繁殖，于1860年诞生的一个品种。</p>
           <el-button type="text" class="button"><router-link to='/sort5'><a href="/sort5" >查看所有</a></router-link></el-button>
         </div>
       </div>
@@ -19,6 +19,7 @@
   .discribe {
     font-size: 13px;
     color: #999;
+        text-align: left;
   }
   
   .bottom {

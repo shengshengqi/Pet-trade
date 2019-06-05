@@ -6,7 +6,7 @@
       <div style="padding: 14px;">
         <span>英国短毛猫</span>
         <div class="bottom clearfix">
-          <discribe class="discribe">英国短毛猫，体形圆胖，四肢粗短发达，毛短而密，头大脸圆，温柔平静，对人友善，极易饲养。</discribe>
+          <p class="discribe">英国短毛猫，体形圆胖，四肢粗短发达，毛短而密，头大脸圆，温柔平静，对人友善，极易饲养。</p>
           <el-button type="text" class="button"><router-link to='/sort2'><a href="/sort2" >查看所有</a></router-link></el-button>
         </div>
       </div>
@@ -19,6 +19,7 @@
   .discribe {
     font-size: 13px;
     color: #999;
+        text-align: left;
   }
   
   .bottom {

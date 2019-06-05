@@ -13,15 +13,15 @@ module.exports = {
     },
 
     fn: async function (inputs, exits) {
-        if(this.req.session.userId){
+        //if(this.req.session.userId){
             let info = await Pet.find({
                 find:0
             })
             if (info) {
-                return exits.success({ info });
+                return exits.success({info});
             } else {
                 return exits.notFound();
             }
-         }
+       //  }
     }
 };

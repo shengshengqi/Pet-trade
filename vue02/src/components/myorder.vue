@@ -10,7 +10,7 @@
 <Cmenu/>
   </el-col>
   <el-col :span="19">
-      <ordertable/>
+      <ordertable v-bind="this.table"/>
   </el-col>
 </el-row>
 </div>
@@ -23,42 +23,29 @@
     import Cmenu from './cmenu.vue'
     import Ordertable from './sorttable/ordertable.vue'
 export default {
-  data() {
-            return {
-                activeIndex: '1',
-                activeIndex2: '1',
-                input: '',
-                dialogVisible1: false,
-                dialogVisible2: false,
-                name: ''
-            };
-        },
-        mounted(){
-            /*页面挂载获取保存的cookie值，渲染到页面上*/
-            let uname = getCookie('username')
-            this.name = uname
-            /*如果cookie不存在，则跳转到登录页*/
-            if(uname == ""){
-                this.$router.push('/')
-            }
-        },
-        methods: {
-            handleSelect(key, keyPath) {
-                console.log(key, keyPath);
-            },
-            
-            handleClose(done) {
-            this.$confirm('确认关闭？')
-            .then(_ => {
-            done();
-          })
-             .catch(_ => {});
-      },
-      quit(){
-                /*删除cookie*/
-                delCookie('username')
-            }
-    },
+ data:()=>({
+   table:[]
+ }),
+  mounted: function(){
+    this.getallorder()
+  },
+  methods:{
+    getallorder(){
+       axios({
+            method:'GET',
+            url:'/api/trade',
+        })
+        .then((response)=>{
+            // console.log(response.data);
+            this.table=response.data.info;
+        })
+        .catch(function(error){
+            console.log(error);
+            alert('error')
+        })
+    }
+  	
+  },
     components:{
   Header,
   Fixbar,
@@ -69,9 +56,7 @@ export default {
  
   name: 'App',
   methods:{
-  	warnlogin(){
-      this.$alert('请先登录！')
-    }
+
   }
 }
 </script>

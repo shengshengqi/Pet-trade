@@ -5,25 +5,15 @@
 <el-row>
   <el-col :span="24"><div class="grid-content bg-purple-dark"><Header/></div></el-col>
 </el-row>
-
-<div class="block">
-  <span class="demonstration">
-  <sorttable1/>
-  </span>
-  <el-pagination
-    layout="prev, pager, next"
-    :total="50">
-  </el-pagination>
+<div>
+  <sorttable1 v-bind:info="this.table"/>
 </div>
-
-
-    
-    
   </div>
   
 </template>
 
 <script>
+    import axios from 'axios';
     import Header from './Header.vue'
     import sorttable1 from './sorttable/sorttable1.vue'
     import Fixbar from './fixbar.vue'
@@ -33,8 +23,27 @@ export default {
   sorttable1,
   Fixbar
  },
-  name: 'App',
+ data:()=>({
+   table:[]
+ }),
+  mounted:function(){
+    this.getallpet()
+  },
   methods:{
+    getallpet(){
+       axios({
+            method:'GET',
+            url:'/api/pet/all',
+        })
+        .then((response)=>{
+            // console.log(response.data);
+            this.table=response.data.info;
+        })
+        .catch(function(error){
+            console.log(error);
+            alert('error')
+        })
+    }
   	
   }
 }
