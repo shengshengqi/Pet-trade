@@ -2,7 +2,7 @@ module.exports = {
 
     friendlyName: 'delete a pet',
 
-    description: '删除一本图书',
+    description: '删除一只宠物',
 
     inputs: {
       userId: {
