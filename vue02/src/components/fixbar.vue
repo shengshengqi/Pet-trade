@@ -1,8 +1,8 @@
 <template>
     <div class="fixedBar">
 		  <img src="../assets/bar.png" width="100%" height="50px"/>
-      <el-button type="primary" class="toright2" @click="dialogVisible2 = true">登录</el-button>
-                <el-button type="primary" class="toright1" @click="dialogVisible1 = true">注册</el-button>
+      <el-button type="primary" class="toright2" @click="dialogVisible2 = true" v-if="havelogined==false">登录</el-button>
+                <el-button type="primary" class="toright1" @click="dialogVisible1 = true" v-if="havelogined==false">注册</el-button>
                 <el-dialog
                     title="注册"
                     :visible.sync="dialogVisible1"
@@ -32,6 +32,7 @@
                         <el-button type="primary" @click="submitLogin($event)">确 定</el-button>
                     </span>
                 </el-dialog>
+                <router-link to='/userimformation'><a href="/userimformation"><h1  class="toright2" v-if="havelogined">{{tousername}}</h1></a></router-link>
       </div>
 </template>
 <script>
@@ -50,7 +51,10 @@ export default {
                 dpassword:''
                 },
                 dialogVisible1: false,
-                dialogVisible2: false
+                dialogVisible2: false,
+                havelogined: this.$store.state.loginin,
+                
+                tousername: this.$store.state.userName
             };
         },
         methods: {
@@ -72,8 +76,22 @@ export default {
             
         })
         .then(function(response){
-            console.log(response.data);
+            console.log(response.data.info.userName);
              alert('登陆成功！');
+             that.$store.dispatch('getNewLoginin',true);
+             console.log(that.$store.state.loginin);
+            that.havelogined=that.$store.state.loginin;
+            console.log(that.havelogined);
+            that.tousername=that.$store.state.userName;
+            that.$store.dispatch('getNewUserid',response.data.info.id);//保存用户的id
+            console.log("vuex之后"+that.$store.state.userid);
+             that.$store.dispatch('getNewUserName',response.data.info.userName);//保存用户的id
+            console.log("vuex之后"+that.$store.state.userName);
+
+            that.$router.push({path:'/'});
+            
+
+
         })
         .catch(function(error){
             //console.log(error);
