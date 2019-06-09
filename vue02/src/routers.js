@@ -4,6 +4,7 @@ import Sell from './components/sell.vue'
 import Userimformation from './components/userimformation.vue'
 import Haveupload from './components/haveupload.vue'
 import Myorder from './components/myorder.vue'
+import Search from './components/search.vue'
 const routers = [
   {
     path: '/home',
@@ -34,6 +35,10 @@ const routers = [
   {
     path: '/sell',
     component: Sell
+  },
+  {
+    path: '/search',
+    component: Search
   },
 ]
 export default routers

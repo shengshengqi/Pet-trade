@@ -7,7 +7,7 @@
         <span>苏格兰折耳猫</span>
         <div class="bottom clearfix">
           <p class="discribe">苏格兰折耳猫是猫的一种在耳朵有基因突变的猫种。由于这猫种最初在苏格兰发现，所以以它的发现地和身体特征而命名。</p>
-          <el-button type="text" class="button"><router-link to='/sort4'><a href="/sort4" >查看所有</a></router-link></el-button>
+          <el-button type="text" class="button"><router-link to='/search'><a href="/search" >查看所有</a></router-link></el-button>
         </div>
       </div>
     </el-card>

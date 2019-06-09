@@ -7,7 +7,7 @@
         <span>暹罗猫</span>
         <div class="bottom clearfix">
           <p class="discribe">暹罗猫是世界著名的短毛猫，也是短毛猫的代表品种。暹罗猫能够较好适应主人当地的气候，且性格刚烈好动，善解人意。</p>
-          <el-button type="text" class="button"><router-link to='/sort3'><a href="/sort3" >查看所有</a></router-link></el-button>
+          <el-button type="text" class="button"><router-link to='/search'><a href="/search" >查看所有</a></router-link></el-button>
         </div>
       </div>
     </el-card>

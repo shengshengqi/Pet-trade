@@ -3,18 +3,7 @@
     <Fixbar/>
 <img src="../assets/head.png" width="100%">
 <el-row>
-  <el-col :span="24"><div class="grid-content bg-purple-dark">
-    <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" background-color="white" text-color="brown" active-text-color="#ffd04b">
-       <el-menu-item index="1"> <router-link to='/home'><a href="/home">首页</a></router-link></el-menu-item>
-        <el-menu-item index="2"><router-link to='/sort1'><a href="/sort1">查看所有</a></router-link></el-menu-item>
-        <el-menu-item index="3">寄售</el-menu-item>
-        <div class="toright">
-                <el-input placeholder="请输入内容" prefix-icon="el-icon-search" v-model="input" ></el-input>
-
-              </div>  
-               
-    </el-menu>
-    </div></el-col>
+  <el-col :span="24"><Header/></el-col>
 </el-row>
 <ZMD/>
 <el-row>

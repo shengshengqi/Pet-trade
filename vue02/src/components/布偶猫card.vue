@@ -7,7 +7,7 @@
         <span>布偶猫</span>
         <div class="bottom clearfix">
           <p class="discribe">布偶猫，又称“布拉多尔（Ragdoll）”，发源于美国，是一种杂交品种宠物猫。布偶猫较为温顺好静，对人友善。</p>
-          <el-button type="text" class="button"><router-link to='/sort1'><a href="/sort1" >查看所有</a></router-link></el-button>
+          <el-button type="text" class="button"><router-link to='/search'><a href="/search" >查看所有</a></router-link></el-button>
         </div>
       </div>
     </el-card>

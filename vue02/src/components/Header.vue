@@ -5,16 +5,16 @@
         <el-menu-item index="3"><router-link to='/sell'>
             寄售</router-link>
         </el-menu-item>
-        <div class="toright">
-                <el-input placeholder="请输入内容" prefix-icon="el-icon-search" v-model="input" ></el-input>
-
-              </div>  
+        <el-menu-item index="4"><router-link to='/search'>
+            搜索</router-link>
+        </el-menu-item>
+ 
                
     </el-menu>
 </template>
 
 <script>
-
+    import axios from 'axios';
     export default {
         data() {
             return {
@@ -25,10 +25,11 @@
                 dialogVisible2: false
             };
         },
+
         methods: {
 
     }
-        };
+};
     
 </script>
 <style>
