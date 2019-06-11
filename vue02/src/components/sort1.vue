@@ -41,7 +41,7 @@ export default {
         })
         .catch(function(error){
             console.log(error);
-            alert('error')
+            alert('请先登录')
         })
     }
   	

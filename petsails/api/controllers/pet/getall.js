@@ -13,7 +13,7 @@ module.exports = {
     },
 
     fn: async function (inputs, exits) {
-        //if(this.req.session.userId){
+        if(this.req.session.userId){
             let info = await Pet.find({
                 find:0
             })
@@ -22,6 +22,6 @@ module.exports = {
             } else {
                 return exits.notFound();
             }
-       //  }
+        }
     }
 };

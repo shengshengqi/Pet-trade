@@ -23,7 +23,7 @@ module.exports.policies = {
    'pet/delete':'isLoggedIn',
    'pet/search':'isLoggedIn',
    'pet/update':'isLoggedIn',
-   //'pet/getall':'isLoggedIn',
+   'pet/getall':'isLoggedIn',
    'pet/picture':'isLoggedIn',
    //user
    'user/create':'isLoggedIn',
