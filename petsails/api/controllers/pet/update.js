@@ -5,7 +5,7 @@ module.exports = {
   
     inputs: {
       id: {
-        type: 'string',
+        type: 'number',
         required: true,
       },
       petName: {
@@ -20,7 +20,7 @@ module.exports = {
       age:{
           type:'number'
       },
-      Price: {
+      price: {
         type: 'number',
        // allowNull: true,
       },
