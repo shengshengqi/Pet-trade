@@ -33,8 +33,8 @@ module.exports.routes = {
   'POST /user/login': {action: 'user/login'},
   'PATCH /user/id': {action: 'user/update'},
   'GET /pet/user/id': {action: 'user/search'},
-  'POST /user/pet': {action: 'user/add-pet'},
   'POST /user/avatar': {action: 'user/avatar'},
+  'POST /user/pet': {action: 'user/add-pet'},
   'DELETE /user/pet': {action: 'user/delete-pet'},
   //trade
   'POST /trade': {action: 'trade/trade'},
