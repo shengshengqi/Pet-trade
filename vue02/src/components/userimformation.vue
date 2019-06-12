@@ -10,7 +10,7 @@
 <Cmenu/>
   </el-col>
   <el-col :span="5">
-    <img src="../assets/logo.png"/>
+
   </el-col>
   <el-col :span="10">
   <USBD/>

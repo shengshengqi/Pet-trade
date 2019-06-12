@@ -4,7 +4,7 @@
 <img src="../assets/head.png" width="100%">
 <el-row>
   <el-col :span="24">
-      <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" background-color="white" text-color="brown" active-text-color="#ffd04b">
+      <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" background-color="white" text-color="brown" active-text-color="#ffd04b">
        <el-menu-item index="1"> <router-link to='/home'><a href="/home">首页</a></router-link></el-menu-item>
        <el-menu-item index="2"><router-link to='/sort1'><a href="/sort1">查看所有</a></router-link></el-menu-item>
         <el-menu-item index="3"><router-link to='/sell'>
@@ -14,7 +14,7 @@
             搜索</router-link>
         </el-menu-item>
         <div class="toright">
-                <el-input placeholder="请输入内容" prefix-icon="el-icon-search" v-model="input" @keyup.13.native="entersearch"></el-input>
+                <el-input  prefix-icon="el-icon-search" v-model="input" @keyup.13.native="entersearch"></el-input>
 
               </div>  
                
@@ -26,7 +26,7 @@
 </div>
 </template>
 <script>
-    import axios from 'axios';
+    import axios from 'axios'
     import Header from './Header.vue'
     import Fixbar from './fixbar.vue'
     import sorttable1 from './sorttable/sorttable1.vue'
@@ -34,11 +34,7 @@ export default {
   data() {
             return {
                 activeIndex: '1',
-                activeIndex2: '1',
-                input: '',
-                dialogVisible1: false,
-                dialogVisible2: false,
-                name: ''
+                input: ''
             };
         },
 
@@ -53,9 +49,9 @@ export default {
  data:()=>({
    table:[]
  }),
-//   mounted:function(){
-//     this.entersearch()
-//   },
+  // mounted:function(){
+  //   this.entersearch()
+  // },
   methods:{
     entersearch(){
        let that = this;

@@ -42,7 +42,7 @@ export default {
        axios({
             method:'GET',
             url:'/api/pet/user/id',
-            data:{id:that.$store.state.userid}
+            data:{id:this.$store.state.userid}
         })
         .then((response)=>{
             console.log(response.data);
