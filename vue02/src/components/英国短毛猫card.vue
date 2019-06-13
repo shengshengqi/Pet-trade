@@ -7,7 +7,7 @@
         <span>英国短毛猫</span>
         <div class="bottom clearfix">
           <p class="discribe">英国短毛猫，体形圆胖，四肢粗短发达，毛短而密，头大脸圆，温柔平静，对人友善，极易饲养。</p>
-          <el-button type="text" class="button"><router-link to='/search'><a href="/search" >查看所有</a></router-link></el-button>
+          
         </div>
       </div>
     </el-card>

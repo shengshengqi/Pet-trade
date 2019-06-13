@@ -10,7 +10,7 @@
 <Cmenu/>
   </el-col>
   <el-col :span="19">
-      <ordertable v-bind="this.table"/>
+      <ordertable v-bind="this.table" />
   </el-col>
 </el-row>
 </div>
@@ -18,46 +18,43 @@
 </template>
 
 <script>
+    import axios from 'axios'
     import Header from './Header.vue'
     import Fixbar from './fixbar.vue'
     import Cmenu from './cmenu.vue'
     import Ordertable from './sorttable/ordertable.vue'
-export default {
- data:()=>({
-   table:[]
- }),
-  mounted: function(){
-    this.getallorder()
-  },
-  methods:{
-    getallorder(){
-       axios({
-            method:'GET',
-            url:'/api/trade',
-        })
-        .then((response)=>{
-            // console.log(response.data);
-            this.table=response.data.info;
-        })
-        .catch(function(error){
-            console.log(error);
-            alert('error')
-        })
-    }
-  	
-  },
-    components:{
+export default { 
+  components:{
   Header,
   Fixbar,
   Cmenu,
   Ordertable
-
  },
- 
-  name: 'Myorder',
+  data:()=>({
+   table:[]
+  }),
+  mounted:function(){
+    this.getallorder()
+  },
   methods:{
-
-  }
+    getallorder(){
+      let that=this;
+       axios({
+            method:'GET',
+            url:'/api/trade',
+            params:{key:that.$store.state.userid}
+        })
+        .then((response)=>{
+            console.log(response.data);
+            this.table=response.data.info;
+        })
+        .catch(function(error){
+            console.log(error);
+            console.log(that.$store.state.userid)
+            alert('error')
+        })
+    }
+  },
 }
 </script>
 

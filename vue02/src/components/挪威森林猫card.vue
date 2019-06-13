@@ -7,7 +7,7 @@
         <span>挪威森林猫</span>
         <div class="bottom clearfix">
           <p class="discribe">挪威森林猫，以白话直译的说法，就是在挪威森林里面栖息的，生存的猫，这是斯堪地半岛特有的品种，其起源不明。</p>
-          <el-button type="text" class="button"><router-link to='/search'><a href="/search" >查看所有</a></router-link></el-button>
+          
         </div>
       </div>
     </el-card>
