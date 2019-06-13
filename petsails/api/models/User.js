@@ -14,7 +14,7 @@ module.exports = {
     },
     userName:{
       type:'string',
-      //required:true, 必须时为true
+      //required:true,
     },
     password:{
       type:'string',

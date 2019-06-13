@@ -365,7 +365,7 @@ paths:
   /user/avatar:
      post:
       tags:
-      - "pet"
+      - "user"
       summary: "上传用户头像"
       description: ""
       operationId: "uploadFile"
