@@ -2,51 +2,25 @@
     <el-table
       :data="this.info"
       style="width: 100%">
-      <el-table-column
-        prop="id"
-        label="订单编号"
-        width="100">
-      </el-table-column>
+      
       <el-table-column
         prop="buyerName"
         label="买家昵称"
-        width="100">
+        width=300>
       </el-table-column>
       <el-table-column
         prop="sellerName"
         label="卖家昵称"
-        width="100">
+        width=300>
       </el-table-column>
-        <el-table-column
-        prop="time"
-        label="时间"
-        width="100"
-        >
-      </el-table-column>
+        
       <el-table-column
-        prop="petInfo"
+        prop="petinfo"
         label="宠物详情"
-        width="100"
+        width=300
         >
       </el-table-column>
-      <el-table-column
-        prop="petInfo"
-        label="宠物详情"
-        width="100"
-        >
-      </el-table-column>
-      <el-table-column
-        prop="buyerAddress"
-        label="买家地址"
-        width="100"
-        >
-      </el-table-column>
-      <el-table-column
-        prop="sellerAddress"
-        label="卖家地址"
-        width="100"
-        >
-      </el-table-column>
+      
     </el-table>
   </template>
 
@@ -58,5 +32,6 @@
           type:Array
         }
       },
+     
     }
   </script>
