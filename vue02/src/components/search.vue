@@ -15,9 +15,7 @@
         </el-menu-item>
         <div class="toright">
                 <el-input  prefix-icon="el-icon-search" v-model="input" @keyup.13.native="entersearch"></el-input>
-
-              </div>  
-               
+              </div> 
     </el-menu></el-col>
 </el-row>
 <div>
