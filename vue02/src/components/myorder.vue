@@ -55,8 +55,6 @@ export default {
         })
     }
   },
- 
-
 }
 </script>
 
