@@ -25,9 +25,9 @@ module.exports = {
         if(this.req.session.userId){
             let info = await Trade.find({
                 or: [
-                    { buyerName: { 'contains': inputs.key } },
-                    { sellerName: { 'contains': inputs.key } },
-                    { petinfo: { 'contains': inputs.key } },
+                    { buyerId: { 'contains': inputs.key } },
+                    { sellerId: { 'contains': inputs.key } },
+                    { petId: { 'contains': inputs.key } },
                 ]
             })
             if (info[0]) {

@@ -18,6 +18,15 @@ module.exports = {
     sellerName:{
       type:'string',
     },
+    buyerId: {
+      type: 'number',
+    },
+    sellerId: {
+      type: 'number',
+    },
+    petId: {
+      type: 'number',
+    },
     time:{
       type:'string',
     },

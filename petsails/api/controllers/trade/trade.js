@@ -45,7 +45,10 @@ module.exports = {
       console.log(sellerInfo,buyerInfo);
       let data = await Trade.create({
         buyerName: buyerInfo[0].userName,
+        buyerId:inputs.buyerId,
         sellerName: sellerInfo[0].userName,
+        sellerId:inputs.sellerId,
+        petId:inputs.petId,
         time: new Date().getTime(),
         petInfo: petInfo[0].info,
         buyerAddress: buyerInfo[0].address,

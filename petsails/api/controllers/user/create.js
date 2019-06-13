@@ -29,7 +29,6 @@ module.exports = {
     },
   
     fn: async function (inputs, exits) {
-      if(this.req.session.userId){
         if(inputs.password == inputs.dpassword){
             await User.create({
                 userName: inputs.userName,
@@ -49,6 +48,5 @@ module.exports = {
         }else{
         return exits.fail({info: '用户创建失败'})
       }
-    }
   }
 }

@@ -5,6 +5,11 @@ module.exports = {
   description: '创建宠物.',
 
   inputs: {
+    ownerId:{
+      description: '主人id.',
+      type: 'number',
+      required: true
+    },
     petName: {
       description: '宠物昵称.',
       type: 'string',
@@ -49,7 +54,8 @@ module.exports = {
         info:inputs.info,
         age:inputs.age,
         price:inputs.price,
-        find:0
+        find:0,
+        owner:inputs.ownerId
     }).intercept((err)=>{
       return exits.serverError({info: 'err'})
     }).fetch()  //.fetch()返回参数

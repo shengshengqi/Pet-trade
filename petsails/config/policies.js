@@ -26,7 +26,7 @@ module.exports.policies = {
    'pet/getall':'isLoggedIn',
    'pet/picture':'isLoggedIn',
    //user
-   'user/create':'isLoggedIn',
+   'user/create':true,
    'user/login':true,
    'user/update':'isLoggedIn',
    'user/add-pet':'isLoggedIn',
