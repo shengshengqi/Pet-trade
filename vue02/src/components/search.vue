@@ -14,7 +14,7 @@
             搜索</router-link>
         </el-menu-item>
         <div class="toright">
-                <el-input  prefix-icon="el-icon-search" v-model="input" @keyup.13.native="entersearch"></el-input>
+                <el-input  prefix-icon="el-icon-search" v-model="finput" @keyup.13.native="entersearch"></el-input>
               </div> 
     </el-menu></el-col>
 </el-row>
@@ -28,30 +28,26 @@
     import Fixbar from './fixbar.vue'
     import sorttable1 from './sorttable/sorttable1.vue'
 export default {
-
-
-        methods: {
-
-    },
-    components:{
+ components:{
   Fixbar,
   sorttable1
  },
- data:()=>({
-   table:[],
-   activeIndex: '4',
-   input: []
- }),
-  // mounted:function(){
-  //   this.entersearch()
-  // },
+  data: function () {
+  return {
+    table: [],
+    finput:'',
+    activeIndex: '4'
+  }
+},
   methods:{
     entersearch(){
        let that = this;
        axios({
             method:'GET',
             url:'/api/pet/key',
-            data:{key:that.input}
+            params:{
+              key:that.finput
+              }
         })
         .then((response)=>{
             console.log(response.data);
@@ -59,7 +55,7 @@ export default {
         })
         .catch(function(error){
             console.log(error);
-            console.log(that.input);
+            console.log(that.finput);
             alert('error')
         })
     }
