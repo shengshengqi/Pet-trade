@@ -29,10 +29,11 @@ module.exports = {
                     { info: { 'contains': inputs.key } },
                 ]
             })
-
+            console.log("ssu")
             if (info[0]) {
                 return exits.success({ info });
             } else {
+                console.log("fail")
                 return exits.notFound();
             }
     }

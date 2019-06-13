@@ -27,27 +27,22 @@
 </template>
 <script>
     import axios from 'axios'
-    import Header from './Header.vue'
     import Fixbar from './fixbar.vue'
     import sorttable1 from './sorttable/sorttable1.vue'
 export default {
-  data() {
-            return {
-                activeIndex: '1',
-                input: ''
-            };
-        },
+
 
         methods: {
 
     },
     components:{
-  Header,
   Fixbar,
   sorttable1
  },
  data:()=>({
-   table:[]
+   table:[],
+   activeIndex: '4',
+   input: []
  }),
   // mounted:function(){
   //   this.entersearch()
@@ -58,7 +53,7 @@ export default {
        axios({
             method:'GET',
             url:'/api/pet/key',
-            data:{key:this.input}
+            data:{key:that.input}
         })
         .then((response)=>{
             console.log(response.data);
@@ -66,6 +61,7 @@ export default {
         })
         .catch(function(error){
             console.log(error);
+            console.log(that.input);
             alert('error')
         })
     }
