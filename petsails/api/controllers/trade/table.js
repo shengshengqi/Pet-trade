@@ -6,7 +6,7 @@ module.exports = {
   
     inputs: {
         key: {
-            description: '买家id、卖家id、宠物id',
+            description: '买家id、卖家id',
             type: 'number',
             required: true,
         }
@@ -25,9 +25,8 @@ module.exports = {
         if(this.req.session.userId){
             let info = await Trade.find({
                 or: [
-                    { buyerId: { 'contains': inputs.key } },
-                    { sellerId: { 'contains': inputs.key } },
-                    { petId: { 'contains': inputs.key } },
+                    { buyerId: inputs.key  },
+                    { sellerId:  inputs.key }
                 ]
             })
             if (info[0]) {
