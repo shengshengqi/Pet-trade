@@ -6,7 +6,7 @@
   <el-col :span="24"><div class="grid-content bg-purple-dark"><Header/></div></el-col>
 </el-row>
 <el-row>
-<Upload class="toleft"/>
+
 <JSBD class="uploadtext" />
 </el-row>
   </div>
@@ -14,13 +14,13 @@
 </template>
 <script>
     import Header from './Header.vue'
-    import Upload from './upload.vue'
+
     import JSBD from './寄售表单.vue'
     import Fixbar from './fixbar.vue'
     export default {
     components:{
   Header,
-  Upload,
+
   Fixbar,
   JSBD},
   name: 'App',

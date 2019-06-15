@@ -10,7 +10,7 @@
 <Cmenu/>
   </el-col>
   <el-col :span="19">
-      <ordertable v-bind="this.table" />
+      <ordertable v-bind:info="this.table" />
   </el-col>
 </el-row>
 </div>

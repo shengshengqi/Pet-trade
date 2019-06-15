@@ -36,7 +36,7 @@ export default {
             url:'/api/pet/all',
         })
         .then((response)=>{
-            // console.log(response.data);
+            console.log(response.data);
             this.table=response.data.info;
         })
         .catch(function(error){

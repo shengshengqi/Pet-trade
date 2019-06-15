@@ -2,25 +2,57 @@
     <el-table
       :data="this.info"
       style="width: 100%">
-      
+      <el-table-column
+        prop="id"
+        label="订单id"
+        width=180>
+      </el-table-column>
+      <el-table-column
+        prop="buyerAddress"
+        label="买家地址"
+        width=180>
+      </el-table-column>
+      <el-table-column
+        prop="buyerId"
+        label="买家id"
+        width=180>
+      </el-table-column>
       <el-table-column
         prop="buyerName"
         label="买家昵称"
-        width=300>
+        width=180>
+      </el-table-column>
+      <el-table-column
+        prop="sellerAddress"
+        label="卖家地址"
+        width=180>
+      </el-table-column>
+      <el-table-column
+        prop="sellerId"
+        label="卖家id"
+        width=180>
       </el-table-column>
       <el-table-column
         prop="sellerName"
         label="卖家昵称"
-        width=300>
+        width=180>
       </el-table-column>
-        
       <el-table-column
-        prop="petinfo"
+        prop="petId"
+        label="宠物id"
+        width=180>
+      </el-table-column>
+      <el-table-column
+        prop="petInfo"
         label="宠物详情"
-        width=300
+        width=180
         >
       </el-table-column>
-      
+      <el-table-column
+        prop="time"
+        label="交易时间"
+        width=180>
+      </el-table-column>
     </el-table>
   </template>
 
@@ -32,6 +64,9 @@
           type:Array
         }
       },
-     
+     mounted: function(){
+
+
+  },
     }
   </script>
