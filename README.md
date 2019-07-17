@@ -11,13 +11,13 @@
 		` npm start`启动sails,地址为localhost：1337
 		启动后会需要选择数据库运行模式，直接回车
 		- **启动失败怎么办**
-			- 请先确定是否已安装nodemon,如未安装，请先安装
-			- 实用开发工具的安装和使用nodemon(可以在代码发生更改的时候自动重启项目，提高开发效率)
-			`cd petsails`  
-			`npm install nodemon -g`
-			在package.json里面修改启动方式
-			`"start": "nodemon app.js"`
-			最后`npm start`启动
+			- 请先确定是否已安装nodemon,如未安装，请先安装  
+			- 实用开发工具的安装和使用nodemon(可以在代码发生更改的时候自动重启项目，提高开发效率)  
+			`cd petsails`    
+			`npm install nodemon -g`  
+			在package.json里面修改启动方式  
+			`"start": "nodemon app.js"`  
+			最后`npm start`启动  
 - 前端
 	- 环境搭建
 		- vue
